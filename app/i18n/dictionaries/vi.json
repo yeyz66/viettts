@@ -141,7 +141,7 @@
   "converter": {
     "title": "Văn bản thành giọng nói",
     "subtitle": "Chuyển văn bản của bạn thành giọng nói trong vài giây",
-    "inputPlaceholder": "Nhập văn bản của bạn tại đây (tối đa 1000 ký tự)",
+    "inputPlaceholder": "Nhập văn bản của bạn tại đây (tối đa {charLimit} ký tự)",
     "voiceLabel": "Chọn giọng nói",
     "instructions": "Hướng dẫn: Nhập văn bản của bạn vào ô phía trên, chọn giọng nói từ menu thả xuống, sau đó nhấp vào 'Tạo giọng nói'. Sau khi tạo, bạn có thể nghe âm thanh và tải xuống dưới dạng tệp MP3.",
     "rateLimitNotice": "Lưu ý: Người dùng miễn phí bị giới hạn {limit} thao tác chuyển văn bản thành giọng nói mỗi phút trên toàn cầu.",
@@ -174,10 +174,10 @@
     "generateButton": "Tạo giọng nói",
     "downloadButton": "Tải xuống MP3",
     "processing": "Đang xử lý...",
-    "characterCount": "Ký tự: {count}/1000",
+    "characterCount": "Ký tự: {count}/{charLimit}",
     "errorMessages": {
       "emptyText": "Vui lòng nhập văn bản để chuyển đổi",
-      "tooLongText": "Văn bản vượt quá độ dài tối đa 1000 ký tự",
+      "tooLongText": "Văn bản vượt quá độ dài tối đa {charLimit} ký tự",
       "failedGeneration": "Không thể tạo giọng nói. Vui lòng thử lại."
     }
   },

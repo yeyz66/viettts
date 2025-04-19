@@ -30,7 +30,7 @@ export default function TextToSpeechConverter() {
   const [queueCheckInterval, setQueueCheckInterval] = useState<NodeJS.Timeout | null>(null);
   const [lastUpdateTime, setLastUpdateTime] = useState<Date>(new Date());
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const MAX_LENGTH = 1000;
+  const MAX_LENGTH = parseInt(process.env.NEXT_PUBLIC_TEXT_INPUT_CHAR_LIMIT || '1000');
   
   // Poll intervals in milliseconds
   const NORMAL_POLL_INTERVAL = 10000; // 10 seconds
@@ -97,7 +97,7 @@ export default function TextToSpeechConverter() {
     }
 
     if (text.length > MAX_LENGTH) {
-      toast.error(t('errorMessages.tooLongText'));
+      toast.error(t('errorMessages.tooLongText', { charLimit: MAX_LENGTH.toString() }));
       return;
     }
 
@@ -405,7 +405,7 @@ export default function TextToSpeechConverter() {
 
               <div>
                 <label htmlFor="text" className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">
-                  {t('inputPlaceholder')}
+                  {t.rich('inputPlaceholder', { charLimit: MAX_LENGTH.toString() })}
                 </label>
                 <div className="mt-2">
                   <textarea
@@ -413,13 +413,13 @@ export default function TextToSpeechConverter() {
                     name="text"
                     rows={6}
                     className="block w-full rounded-md border-0 py-2 px-3 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-indigo-500 dark:bg-gray-800 sm:text-sm sm:leading-6"
-                    placeholder={t('inputPlaceholder')}
+                    placeholder={t('inputPlaceholder', { charLimit: MAX_LENGTH.toString() })}
                     value={text}
                     onChange={handleInputChange}
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  {t.rich('characterCount', { count: text.length })}
+                  {t.rich('characterCount', { count: text.length.toString(), charLimit: MAX_LENGTH.toString() })}
                 </p>
               </div>
 
