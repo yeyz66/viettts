@@ -141,7 +141,7 @@
   "converter": {
     "title": "Text to Speech",
     "subtitle": "Convert your text to speech in seconds",
-    "inputPlaceholder": "Enter your text here (up to 4000 characters)",
+    "inputPlaceholder": "Enter your text here (up to 1000 characters)",
     "voiceLabel": "Select a voice",
     "instructions": "Instructions: Enter your text in the box above, select a voice from the dropdown menu, then click 'Generate Speech'. Once generated, you can listen to the audio and download it as an MP3 file.",
     "rateLimitNotice": "Note: Free users are limited to {limit} text-to-speech operations per minute globally.",
@@ -175,10 +175,10 @@
     "generateButton": "Generate Speech",
     "downloadButton": "Download MP3",
     "processing": "Processing...",
-    "characterCount": "Characters: {count}/4000",
+    "characterCount": "Characters: {count}/1000",
     "errorMessages": {
       "emptyText": "Please enter some text to convert",
-      "tooLongText": "Text exceeds maximum length of 4000 characters",
+      "tooLongText": "Text exceeds maximum length of 1000 characters",
       "failedGeneration": "Failed to generate speech. Please try again."
     }
   },

@@ -141,7 +141,7 @@
   "converter": {
     "title": "文字转语音",
     "subtitle": "几秒钟内将文本转换为语音",
-    "inputPlaceholder": "在此输入您的文本（最多4000个字符）",
+    "inputPlaceholder": "在此输入您的文本（最多1000个字符）",
     "voiceLabel": "选择声音",
     "instructions": "使用说明：在上方文本框中输入您的文字，从下拉菜单中选择声音，然后点击\"生成语音\"。生成后，您可以收听音频并将其下载为MP3文件。",
     "rateLimitNotice": "注意：免费用户全局每分钟限制使用{limit}次文字转语音操作。",
@@ -175,10 +175,10 @@
     "generateButton": "生成语音",
     "downloadButton": "下载MP3",
     "processing": "处理中...",
-    "characterCount": "字符数：{count}/4000",
+    "characterCount": "字符数：{count}/1000",
     "errorMessages": {
       "emptyText": "请输入要转换的文本",
-      "tooLongText": "文本超过4000个字符的最大长度",
+      "tooLongText": "文本超过1000个字符的最大长度",
       "failedGeneration": "生成语音失败。请重试。"
     }
   },

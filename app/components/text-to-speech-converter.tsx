@@ -30,7 +30,7 @@ export default function TextToSpeechConverter() {
   const [queueCheckInterval, setQueueCheckInterval] = useState<NodeJS.Timeout | null>(null);
   const [lastUpdateTime, setLastUpdateTime] = useState<Date>(new Date());
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const MAX_LENGTH = 4000;
+  const MAX_LENGTH = 1000;
   
   // Poll intervals in milliseconds
   const NORMAL_POLL_INTERVAL = 10000; // 10 seconds
