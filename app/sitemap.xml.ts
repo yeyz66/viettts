@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://ttl-project.vercel.app';
+  const baseUrl = 'https://www.viettts.com';
   
   // Create a function to generate urls for each locale
   const generateLocaleUrls = (path: string, priority: number, changeFrequency: 'daily' | 'weekly' | 'monthly' = 'weekly') => {
