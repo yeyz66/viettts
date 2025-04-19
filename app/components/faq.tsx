@@ -1,0 +1,72 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+import { Disclosure } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+
+export default function FAQ() {
+  const t = useTranslations('faq');
+
+  const faqs = [
+    { question: t('q1'), answer: t('a1') },
+    { question: t('q2'), answer: t('a2') },
+    { question: t('q3'), answer: t('a3') },
+    { question: t('q4'), answer: t('a4') },
+    { question: t('q5'), answer: t('a5') },
+    { question: t('q6'), answer: t('a6') },
+  ];
+
+  return (
+    <div id="faq" className="bg-white dark:bg-gray-900">
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+        <div className="mx-auto max-w-4xl divide-y divide-gray-900/10 dark:divide-gray-700">
+          <h2 className="text-3xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white text-center mb-12">
+            {t('title')}
+          </h2>
+          <motion.dl 
+            className="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-700"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.1 }}
+          >
+            {faqs.map((faq, index) => (
+              <motion.div 
+                key={index} 
+                className="pt-6"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <Disclosure as="div">
+                  {({ open }) => (
+                    <>
+                      <dt>
+                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900 dark:text-white">
+                          <span className="text-base font-semibold leading-7">{faq.question}</span>
+                          <span className="ml-6 flex h-7 items-center">
+                            <ChevronDownIcon
+                              className={`h-6 w-6 ${
+                                open ? 'rotate-180' : ''
+                              } duration-200 text-indigo-600 dark:text-indigo-400`}
+                              aria-hidden="true"
+                            />
+                          </span>
+                        </Disclosure.Button>
+                      </dt>
+                      <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                        <p className="text-base leading-7 text-gray-600 dark:text-gray-300">{faq.answer}</p>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              </motion.div>
+            ))}
+          </motion.dl>
+        </div>
+      </div>
+    </div>
+  );
+} 

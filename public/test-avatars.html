@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Test</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .avatar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .avatar-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #f8f9fa;
+    }
+    .avatar-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .role {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Avatar Test</h1>
+  
+  <div class="avatar-grid">
+    <!-- First row: Original avatar paths that will trigger error -->
+    <div class="avatar-card">
+      <img class="avatar-img" src="/avatars/avatar-1.png" alt="John Doe" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/initials/svg?seed=John%20Doe&backgroundColor=6366f1'">
+      <div class="name">John Doe</div>
+      <div class="role">Designer</div>
+    </div>
+    <div class="avatar-card">
+      <img class="avatar-img" src="/avatars/avatar-2.png" alt="Jane Smith" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Jane%20Smith&backgroundColor=8b5cf6'">
+      <div class="name">Jane Smith</div>
+      <div class="role">Developer</div>
+    </div>
+    <div class="avatar-card">
+      <img class="avatar-img" src="/avatars/avatar-3.png" alt="Mark Johnson" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Mark%20Johnson&backgroundColor=ec4899'">
+      <div class="name">Mark Johnson</div>
+      <div class="role">Manager</div>
+    </div>
+
+    <!-- Second row: Direct DiceBear API examples -->
+    <div class="avatar-card">
+      <img class="avatar-img" src="https://api.dicebear.com/7.x/initials/svg?seed=Sarah%20Lee&backgroundColor=6366f1" alt="Sarah Lee">
+      <div class="name">Sarah Lee</div>
+      <div class="role">Customer</div>
+    </div>
+    <div class="avatar-card">
+      <img class="avatar-img" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Robert%20Chen&backgroundColor=8b5cf6" alt="Robert Chen">
+      <div class="name">Robert Chen</div>
+      <div class="role">Customer</div>
+    </div>
+    <div class="avatar-card">
+      <img class="avatar-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Lisa%20Wang&backgroundColor=ec4899" alt="Lisa Wang">
+      <div class="name">Lisa Wang</div>
+      <div class="role">Customer</div>
+    </div>
+
+    <!-- Third row: Different styles -->
+    <div class="avatar-card">
+      <img class="avatar-img" src="https://api.dicebear.com/7.x/pixel-art/svg?seed=David%20Miller&backgroundColor=6366f1" alt="David Miller">
+      <div class="name">David Miller</div>
+      <div class="role">Customer</div>
+    </div>
+    <div class="avatar-card">
+      <img class="avatar-img" src="https://api.dicebear.com/7.x/lorelei/svg?seed=Karen%20Williams&backgroundColor=8b5cf6" alt="Karen Williams">
+      <div class="name">Karen Williams</div>
+      <div class="role">Customer</div>
+    </div>
+    <div class="avatar-card">
+      <img class="avatar-img" src="https://api.dicebear.com/7.x/thumbs/svg?seed=Michael%20Brown&backgroundColor=ec4899" alt="Michael Brown">
+      <div class="name">Michael Brown</div>
+      <div class="role">Customer</div>
+    </div>
+  </div>
+
+  <script>
+    // This is just for demonstration - our React component handles this with useState
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Avatar test page loaded');
+    });
+  </script>
+</body>
+</html> 

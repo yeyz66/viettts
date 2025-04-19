@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "home": "首页",
+    "features": "功能",
+    "pricing": "价格",
+    "howItWorks": "使用方法",
+    "textToSpeech": "文字转语音",
+    "faq": "常见问题"
+  },
+  "hero": {
+    "title": "几秒钟内将文字转换为自然语音",
+    "subtitle": "采用OpenAI先进的文字转语音技术",
+    "ctaButton": "免费试用",
+    "secondaryButton": "了解更多"
+  },
+  "features": {
+    "title": "强大的文字转语音功能",
+    "subtitle": "创建自然流畅的语音，支持自定义声音",
+    "feature1": {
+      "title": "逼真的声音",
+      "description": "选择多种逼真自然的声音，让内容更具吸引力"
+    },
+    "feature2": {
+      "title": "多语言支持",
+      "description": "支持数十种语言和口音，满足您的全球化需求"
+    },
+    "feature3": {
+      "title": "轻松下载",
+      "description": "以高质量MP3格式下载音频文件，随处使用"
+    },
+    "feature4": {
+      "title": "声音自定义",
+      "description": "调整音调、速度和语调，为您的内容创建完美声音"
+    }
+  },
+  "howItWorks": {
+    "title": "使用方法",
+    "subtitle": "三个简单步骤将文本转换为语音",
+    "step1": {
+      "title": "输入文本",
+      "description": "输入或粘贴您想要转换为语音的文本"
+    },
+    "step2": {
+      "title": "选择声音",
+      "description": "从我们的自然声音集合中选择"
+    },
+    "step3": {
+      "title": "生成并下载",
+      "description": "创建您的音频文件并立即下载"
+    }
+  },
+  "testimonials": {
+    "title": "用户评价",
+    "testimonial1": {
+      "quote": "声音质量令人难以置信。我用它制作我的播客介绍，听众根本听不出是AI生成的！",
+      "author": "莎拉·约翰逊",
+      "role": "播客主持人"
+    },
+    "testimonial2": {
+      "quote": "作为内容创作者，这个工具为我节省了无数录音时间。自然的语音抑扬顿挫使其与众不同。",
+      "author": "陈明",
+      "role": "YouTuber"
+    },
+    "testimonial3": {
+      "quote": "我将其用于在线课程，多语言支持帮助我接触到全球受众。",
+      "author": "艾米丽·罗德里格斯",
+      "role": "教育顾问"
+    }
+  },
+  "pricing": {
+    "title": "简单透明的价格",
+    "subtitle": "选择适合您需求的套餐",
+    "monthly": "按月付费",
+    "yearly": "按年付费",
+    "basic": {
+      "title": "基础版",
+      "price": "¥59",
+      "period": "/月",
+      "description": "适合个人和小型项目",
+      "features": [
+        "每月10,000字符",
+        "5种声音选项",
+        "标准质量音频",
+        "电子邮件支持"
+      ],
+      "button": "开始使用"
+    },
+    "pro": {
+      "title": "专业版",
+      "price": "¥199",
+      "period": "/月",
+      "description": "适合内容创作者和小型企业",
+      "features": [
+        "每月100,000字符",
+        "所有声音选项",
+        "高质量音频",
+        "优先支持",
+        "API访问"
+      ],
+      "button": "升级到专业版",
+      "popular": "最受欢迎"
+    },
+    "enterprise": {
+      "title": "企业版",
+      "price": "定制",
+      "description": "针对大规模需求的组织",
+      "features": [
+        "无限字符",
+        "定制声音开发",
+        "超高质量音频",
+        "专属客户经理",
+        "高级API集成",
+        "本地部署选项"
+      ],
+      "button": "联系销售"
+    }
+  },
+  "minutesPricing": {
+    "title": "音频时长定价",
+    "subtitle": "仅为您需要的音频时长付费",
+    "durationHeader": "音频时长",
+    "priceHeader": "价格",
+    "description": "这些套餐是一次性付款，用于购买额外的使用量，基于您生成的音频材料的时长，而非周期性订阅。",
+    "guide": "不确定选择哪个套餐？查看我们的文字转语音时长估算指南。"
+  },
+  "faq": {
+    "title": "常见问题",
+    "q1": "什么是文字转语音技术？",
+    "a1": "文字转语音技术将书面文本转换为口语音频。我们的解决方案使用OpenAI的先进AI模型创建自然逼真的语音，非常接近人类声音。",
+    "q2": "您支持多少种语言？",
+    "a2": "我们目前支持超过40种语言，包括英语、中文、西班牙语、法语等。我们不断添加新语言并改进现有语言。",
+    "q3": "我可以将生成的音频用于商业用途吗？",
+    "a3": "是的，在我们的付费计划下，所有在我们平台上生成的音频文件都可以用于商业目的。基础版对商业使用有一些限制。",
+    "q4": "如何下载我的音频文件？",
+    "a4": "生成音频后，只需点击下载按钮即可以MP3格式保存文件。然后您可以在项目、演示或内容中使用它。",
+    "q5": "是否有字符限制？",
+    "a5": "是的，字符限制取决于您的计划。基础版包括每月10,000个字符，专业版提供100,000个，企业版提供无限使用量。",
+    "q6": "声音有多逼真？",
+    "a6": "我们的AI语音非常逼真，具有自然的语调、节奏和重音。许多用户表示，听众无法区分我们的AI声音和人类录音。"
+  },
+  "converter": {
+    "title": "文字转语音",
+    "subtitle": "几秒钟内将文本转换为语音",
+    "inputPlaceholder": "在此输入您的文本（最多4000个字符）",
+    "voiceLabel": "选择声音",
+    "instructions": "使用说明：在上方文本框中输入您的文字，从下拉菜单中选择声音，然后点击\"生成语音\"。生成后，您可以收听音频并将其下载为MP3文件。",
+    "rateLimitNotice": "注意：免费用户全局每分钟限制使用{limit}次文字转语音操作。",
+    "queueNotice": "当达到限制时，您的请求将被加入队列并按顺序处理。",
+    "rateLimitActive": "速率限制已激活",
+    "maxRequestsMessage": "系统当前正在处理最大请求数（每分钟{limit}个）。",
+    "queueAddedMessage": "您的请求将被添加到队列中。",
+    "currentQueue": "当前队列：",
+    "lastUpdated": "最后更新于{time}",
+    "user": "用户",
+    "users": "用户",
+    "requestQueued": "请求已排队",
+    "queuedMessage": "由于需求量大，您的请求已加入队列。当轮到您时，系统会自动处理。",
+    "yourPosition": "您的位置：",
+    "resetQueueStatus": "重置队列状态",
+    "of": "共",
+    "systemStatus": "系统状态",
+    "queuedStatus": "排队中（{position}/{total}）",
+    "voices": {
+      "alloy": "艾洛伊（女声，休闲）",
+      "echo": "艾柯（男声，深沉）",
+      "fable": "菲布尔（女声，温暖）",
+      "onyx": "欧尼克斯（男声，权威）",
+      "nova": "诺瓦（女声，充满活力）",
+      "shimmer": "希默（女声，温柔）",
+      "ash": "艾许（男声，平衡）",
+      "ballad": "巴拉德（男声，柔和）",
+      "coral": "科拉尔（女声，清晰）",
+      "sage": "塞奇（中性，冷静）"
+    },
+    "generateButton": "生成语音",
+    "downloadButton": "下载MP3",
+    "processing": "处理中...",
+    "characterCount": "字符数：{count}/4000",
+    "errorMessages": {
+      "emptyText": "请输入要转换的文本",
+      "tooLongText": "文本超过4000个字符的最大长度",
+      "failedGeneration": "生成语音失败。请重试。"
+    }
+  },
+  "footer": {
+    "company": "公司",
+    "about": "关于我们",
+    "careers": "招聘信息",
+    "blog": "博客",
+    "contact": "联系我们",
+    "legal": "法律条款",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "copyright": "© 2024 音声天才。保留所有权利。",
+    "resources": "资源",
+    "documentation": "文档",
+    "api": "API",
+    "guides": "指南",
+    "support": "支持中心",
+    "socials": "关注我们"
+  },
+  "languageSwitcher": {
+    "language": "语言"
+  }
+} 

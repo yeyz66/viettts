@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "howItWorks": "How It Works",
+    "textToSpeech": "Text to Speech",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Transform Text to Natural Speech in Seconds",
+    "subtitle": "Powered by OpenAI's advanced text-to-speech technology",
+    "ctaButton": "Try for Free",
+    "secondaryButton": "Learn More"
+  },
+  "features": {
+    "title": "Powerful Text-to-Speech Features",
+    "subtitle": "Create natural-sounding speech with customizable voices",
+    "feature1": {
+      "title": "Lifelike Voices",
+      "description": "Choose from a variety of realistic voices that sound natural and engaging"
+    },
+    "feature2": {
+      "title": "Multiple Languages",
+      "description": "Support for dozens of languages and accents to fit your global needs"
+    },
+    "feature3": {
+      "title": "Easy Downloads",
+      "description": "Download your audio files in high-quality MP3 format for use anywhere"
+    },
+    "feature4": {
+      "title": "Voice Customization",
+      "description": "Adjust pitch, speed, and tone to create the perfect voice for your content"
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Three simple steps to convert text to speech",
+    "step1": {
+      "title": "Enter Your Text",
+      "description": "Type or paste the text you want to convert into speech"
+    },
+    "step2": {
+      "title": "Choose a Voice",
+      "description": "Select from our collection of natural-sounding voices"
+    },
+    "step3": {
+      "title": "Generate and Download",
+      "description": "Create your audio file and download it instantly"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "testimonial1": {
+      "quote": "The quality of the voices is incredible. I've used this for my podcast introductions and listeners can't tell it's AI-generated!",
+      "author": "Sarah Johnson",
+      "role": "Podcast Host"
+    },
+    "testimonial2": {
+      "quote": "As a content creator, this tool has saved me countless hours of recording. The natural voice inflections make all the difference.",
+      "author": "Michael Chen",
+      "role": "YouTuber"
+    },
+    "testimonial3": {
+      "quote": "I use this for my e-learning courses and the multilingual support has helped me reach a global audience.",
+      "author": "Emily Rodriguez",
+      "role": "Educational Consultant"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that works for your needs",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "basic": {
+      "title": "Basic",
+      "price": "$9",
+      "period": "/month",
+      "description": "Perfect for individuals and small projects",
+      "features": [
+        "10,000 characters per month",
+        "5 voice options",
+        "Standard quality audio",
+        "Email support"
+      ],
+      "button": "Get Started"
+    },
+    "pro": {
+      "title": "Professional",
+      "price": "$29",
+      "period": "/month",
+      "description": "Ideal for content creators and small businesses",
+      "features": [
+        "100,000 characters per month",
+        "All voice options",
+        "High-quality audio",
+        "Priority support",
+        "API access"
+      ],
+      "button": "Upgrade to Pro",
+      "popular": "Most Popular"
+    },
+    "enterprise": {
+      "title": "Enterprise",
+      "price": "Custom",
+      "description": "For organizations with large-scale needs",
+      "features": [
+        "Unlimited characters",
+        "Custom voice development",
+        "Ultra high-quality audio",
+        "Dedicated account manager",
+        "Advanced API integration",
+        "On-premise options"
+      ],
+      "button": "Contact Sales"
+    }
+  },
+  "minutesPricing": {
+    "title": "Audio Duration Pricing",
+    "subtitle": "Pay only for the audio minutes you need",
+    "durationHeader": "Audio Duration",
+    "priceHeader": "Price",
+    "description": "The plans are one-time payments to purchase additional capacity, based on the duration of audio materials you produce, not recurring subscriptions.",
+    "guide": "Not sure which plan to get? Check out guide on How to estimate the duration of text to speech."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "What is text-to-speech technology?",
+    "a1": "Text-to-speech technology converts written text into spoken voice audio. Our solution uses advanced AI models from OpenAI to create natural-sounding speech that closely resembles human voices.",
+    "q2": "How many languages do you support?",
+    "a2": "We currently support over 40 languages including English, Chinese, Spanish, French, and many more. We're constantly adding new languages and improving existing ones.",
+    "q3": "Can I use the generated audio commercially?",
+    "a3": "Yes, all audio files generated on our platform can be used for commercial purposes under our paid plans. The Basic plan has some limitations for commercial use.",
+    "q4": "How do I download my audio files?",
+    "a4": "After generating your audio, simply click the download button to save the file in MP3 format. You can then use it in your projects, presentations, or content.",
+    "q5": "Are there any character limits?",
+    "a5": "Yes, character limits depend on your plan. The Basic plan includes 10,000 characters per month, Professional offers 100,000, and Enterprise provides unlimited usage.",
+    "q6": "How realistic are the voices?",
+    "a6": "Our AI-powered voices are highly realistic with natural intonation, rhythm, and emphasis. Many users report that listeners cannot distinguish our AI voices from human recordings."
+  },
+  "converter": {
+    "title": "Text to Speech",
+    "subtitle": "Convert your text to speech in seconds",
+    "inputPlaceholder": "Enter your text here (up to 4000 characters)",
+    "voiceLabel": "Select a voice",
+    "instructions": "Instructions: Enter your text in the box above, select a voice from the dropdown menu, then click 'Generate Speech'. Once generated, you can listen to the audio and download it as an MP3 file.",
+    "rateLimitNotice": "Note: Free users are limited to {limit} text-to-speech operations per minute globally.",
+    "queueNotice": "When the limit is reached, your request will be placed in a queue and processed in order.",
+    "rateLimitActive": "Rate Limit Active",
+    "maxRequestsMessage": "The system is currently processing the maximum number of requests ({limit} per minute).",
+    "queueAddedMessage": "Your request will be added to the queue.",
+    "currentQueue": "Current Queue:",
+    "lastUpdated": "Last updated {time}",
+    "user": "user",
+    "users": "users",
+    "requestQueued": "Request Queued",
+    "queuedMessage": "Your request is in queue due to high demand. It will be processed automatically when your turn comes.",
+    "yourPosition": "Your Position:",
+    "resetQueueStatus": "Reset Queue Status",
+    "of": "of",
+    "systemStatus": "System Status",
+    "queuedStatus": "Queued ({position} of {total})",
+    "voices": {
+      "alloy": "Alloy (Female, Casual)",
+      "echo": "Echo (Male, Deep)",
+      "fable": "Fable (Female, Warm)",
+      "onyx": "Onyx (Male, Authoritative)",
+      "nova": "Nova (Female, Energetic)",
+      "shimmer": "Shimmer (Female, Gentle)",
+      "ash": "Ash (Male, Balanced)",
+      "ballad": "Ballad (Male, Smooth)",
+      "coral": "Coral (Female, Clear)",
+      "sage": "Sage (Neutral, Calm)"
+    },
+    "generateButton": "Generate Speech",
+    "downloadButton": "Download MP3",
+    "processing": "Processing...",
+    "characterCount": "Characters: {count}/4000",
+    "errorMessages": {
+      "emptyText": "Please enter some text to convert",
+      "tooLongText": "Text exceeds maximum length of 4000 characters",
+      "failedGeneration": "Failed to generate speech. Please try again."
+    }
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About Us",
+    "careers": "Careers",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2024 VoiceGenius. All rights reserved.",
+    "resources": "Resources",
+    "documentation": "Documentation",
+    "api": "API",
+    "guides": "Guides",
+    "support": "Support Center",
+    "socials": "Connect with us"
+  },
+  "languageSwitcher": {
+    "language": "Language"
+  }
+} 

@@ -1,0 +1,204 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "features": "Tính năng",
+    "pricing": "Giá cả",
+    "howItWorks": "Cách hoạt động",
+    "textToSpeech": "Văn bản thành giọng nói",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "hero": {
+    "title": "Chuyển văn bản thành giọng nói tự nhiên trong vài giây",
+    "subtitle": "Được hỗ trợ bởi công nghệ chuyển văn bản thành giọng nói tiên tiến của OpenAI",
+    "ctaButton": "Dùng thử miễn phí",
+    "secondaryButton": "Tìm hiểu thêm"
+  },
+  "features": {
+    "title": "Tính năng chuyển văn bản thành giọng nói mạnh mẽ",
+    "subtitle": "Tạo giọng nói tự nhiên với giọng điệu tùy chỉnh",
+    "feature1": {
+      "title": "Giọng nói sống động",
+      "description": "Lựa chọn từ nhiều giọng nói chân thực, nghe tự nhiên và cuốn hút"
+    },
+    "feature2": {
+      "title": "Nhiều ngôn ngữ",
+      "description": "Hỗ trợ hàng chục ngôn ngữ và giọng điệu phù hợp với nhu cầu toàn cầu của bạn"
+    },
+    "feature3": {
+      "title": "Tải xuống dễ dàng",
+      "description": "Tải xuống tệp âm thanh của bạn ở định dạng MP3 chất lượng cao để sử dụng ở mọi nơi"
+    },
+    "feature4": {
+      "title": "Tùy chỉnh giọng nói",
+      "description": "Điều chỉnh cao độ, tốc độ và âm sắc để tạo ra giọng nói hoàn hảo cho nội dung của bạn"
+    }
+  },
+  "howItWorks": {
+    "title": "Cách hoạt động",
+    "subtitle": "Ba bước đơn giản để chuyển văn bản thành giọng nói",
+    "step1": {
+      "title": "Nhập văn bản",
+      "description": "Nhập hoặc dán văn bản bạn muốn chuyển thành giọng nói"
+    },
+    "step2": {
+      "title": "Chọn giọng nói",
+      "description": "Lựa chọn từ bộ sưu tập giọng nói tự nhiên của chúng tôi"
+    },
+    "step3": {
+      "title": "Tạo và tải xuống",
+      "description": "Tạo tệp âm thanh của bạn và tải xuống ngay lập tức"
+    }
+  },
+  "testimonials": {
+    "title": "Người dùng nói gì",
+    "testimonial1": {
+      "quote": "Chất lượng giọng nói thật đáng kinh ngạc. Tôi đã sử dụng nó cho phần giới thiệu podcast của mình và người nghe không thể nhận ra đó là do AI tạo ra!",
+      "author": "Sarah Johnson",
+      "role": "Người dẫn Podcast"
+    },
+    "testimonial2": {
+      "quote": "Là một người sáng tạo nội dung, công cụ này đã giúp tôi tiết kiệm vô số giờ ghi âm. Ngữ điệu tự nhiên tạo nên sự khác biệt.",
+      "author": "Michael Chen",
+      "role": "YouTuber"
+    },
+    "testimonial3": {
+      "quote": "Tôi sử dụng công cụ này cho các khóa học trực tuyến và hỗ trợ đa ngôn ngữ đã giúp tôi tiếp cận khán giả toàn cầu.",
+      "author": "Emily Rodriguez",
+      "role": "Tư vấn giáo dục"
+    }
+  },
+  "pricing": {
+    "title": "Giá cả đơn giản, minh bạch",
+    "subtitle": "Chọn gói phù hợp với nhu cầu của bạn",
+    "monthly": "Hàng tháng",
+    "yearly": "Hàng năm",
+    "basic": {
+      "title": "Cơ bản",
+      "price": "200,000đ",
+      "period": "/tháng",
+      "description": "Hoàn hảo cho cá nhân và dự án nhỏ",
+      "features": [
+        "10,000 ký tự mỗi tháng",
+        "5 tùy chọn giọng nói",
+        "Âm thanh chất lượng tiêu chuẩn",
+        "Hỗ trợ qua email"
+      ],
+      "button": "Bắt đầu"
+    },
+    "pro": {
+      "title": "Chuyên nghiệp",
+      "price": "650,000đ",
+      "period": "/tháng",
+      "description": "Lý tưởng cho người sáng tạo nội dung và doanh nghiệp nhỏ",
+      "features": [
+        "100,000 ký tự mỗi tháng",
+        "Tất cả tùy chọn giọng nói",
+        "Âm thanh chất lượng cao",
+        "Hỗ trợ ưu tiên",
+        "Truy cập API"
+      ],
+      "button": "Nâng cấp lên Pro",
+      "popular": "Phổ biến nhất"
+    },
+    "enterprise": {
+      "title": "Doanh nghiệp",
+      "price": "Tùy chỉnh",
+      "description": "Dành cho tổ chức có nhu cầu quy mô lớn",
+      "features": [
+        "Không giới hạn ký tự",
+        "Phát triển giọng nói tùy chỉnh",
+        "Âm thanh chất lượng siêu cao",
+        "Quản lý tài khoản chuyên dụng",
+        "Tích hợp API nâng cao",
+        "Tùy chọn cài đặt tại chỗ"
+      ],
+      "button": "Liên hệ bán hàng"
+    }
+  },
+  "minutesPricing": {
+    "title": "Giá dựa trên thời lượng âm thanh",
+    "subtitle": "Chỉ trả tiền cho số phút âm thanh bạn cần",
+    "durationHeader": "Thời lượng âm thanh",
+    "priceHeader": "Giá",
+    "description": "Các gói này là thanh toán một lần để mua thêm dung lượng, dựa trên thời lượng tài liệu âm thanh bạn tạo ra, không phải đăng ký định kỳ.",
+    "guide": "Không chắc chắn nên chọn gói nào? Xem hướng dẫn của chúng tôi về Cách ước tính thời lượng chuyển văn bản thành giọng nói."
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "q1": "Công nghệ chuyển văn bản thành giọng nói là gì?",
+    "a1": "Công nghệ chuyển văn bản thành giọng nói chuyển đổi văn bản viết thành âm thanh giọng nói. Giải pháp của chúng tôi sử dụng các mô hình AI tiên tiến từ OpenAI để tạo ra giọng nói tự nhiên, gần giống với giọng người thật.",
+    "q2": "Bạn hỗ trợ bao nhiêu ngôn ngữ?",
+    "a2": "Hiện tại chúng tôi hỗ trợ hơn 40 ngôn ngữ bao gồm tiếng Anh, tiếng Trung, tiếng Tây Ban Nha, tiếng Pháp và nhiều ngôn ngữ khác. Chúng tôi liên tục bổ sung ngôn ngữ mới và cải thiện các ngôn ngữ hiện có.",
+    "q3": "Tôi có thể sử dụng âm thanh đã tạo cho mục đích thương mại không?",
+    "a3": "Có, tất cả các tệp âm thanh được tạo trên nền tảng của chúng tôi có thể được sử dụng cho mục đích thương mại theo các gói trả phí của chúng tôi. Gói Cơ bản có một số hạn chế đối với việc sử dụng thương mại.",
+    "q4": "Làm thế nào để tải xuống tệp âm thanh của tôi?",
+    "a4": "Sau khi tạo âm thanh, chỉ cần nhấp vào nút tải xuống để lưu tệp ở định dạng MP3. Sau đó, bạn có thể sử dụng nó trong các dự án, bài thuyết trình hoặc nội dung của mình.",
+    "q5": "Có giới hạn ký tự không?",
+    "a5": "Có, giới hạn ký tự phụ thuộc vào gói của bạn. Gói Cơ bản bao gồm 10,000 ký tự mỗi tháng, Chuyên nghiệp cung cấp 100,000, và Doanh nghiệp cung cấp sử dụng không giới hạn.",
+    "q6": "Giọng nói có thực tế đến mức nào?",
+    "a6": "Giọng nói AI của chúng tôi rất thực tế với ngữ điệu, nhịp điệu và nhấn mạnh tự nhiên. Nhiều người dùng báo cáo rằng người nghe không thể phân biệt giọng nói AI của chúng tôi với bản ghi âm của con người."
+  },
+  "converter": {
+    "title": "Văn bản thành giọng nói",
+    "subtitle": "Chuyển văn bản của bạn thành giọng nói trong vài giây",
+    "inputPlaceholder": "Nhập văn bản của bạn tại đây (tối đa 4000 ký tự)",
+    "voiceLabel": "Chọn giọng nói",
+    "instructions": "Hướng dẫn: Nhập văn bản của bạn vào ô phía trên, chọn giọng nói từ menu thả xuống, sau đó nhấp vào 'Tạo giọng nói'. Sau khi tạo, bạn có thể nghe âm thanh và tải xuống dưới dạng tệp MP3.",
+    "rateLimitNotice": "Lưu ý: Người dùng miễn phí bị giới hạn {limit} thao tác chuyển văn bản thành giọng nói mỗi phút trên toàn cầu.",
+    "queueNotice": "Khi đạt đến giới hạn, yêu cầu của bạn sẽ được đưa vào hàng đợi và xử lý theo thứ tự.",
+    "rateLimitActive": "Đã Kích Hoạt Giới Hạn Tốc Độ",
+    "maxRequestsMessage": "Hệ thống hiện đang xử lý số lượng yêu cầu tối đa ({limit} mỗi phút).",
+    "queueAddedMessage": "Yêu cầu của bạn sẽ được thêm vào hàng đợi.",
+    "currentQueue": "Hàng đợi hiện tại:",
+    "lastUpdated": "Cập nhật lần cuối {time}",
+    "user": "người dùng",
+    "users": "người dùng",
+    "requestQueued": "Yêu Cầu Đã Xếp Hàng",
+    "queuedMessage": "Yêu cầu của bạn đang trong hàng đợi do nhu cầu cao. Nó sẽ được xử lý tự động khi đến lượt bạn.",
+    "yourPosition": "Vị trí của bạn:",
+    "resetQueueStatus": "Đặt lại trạng thái hàng đợi",
+    "of": "trên",
+    "systemStatus": "Trạng Thái Hệ Thống",
+    "voices": {
+      "alloy": "Alloy (Nữ, Thân thiện)",
+      "echo": "Echo (Nam, Trầm)",
+      "fable": "Fable (Nữ, Ấm áp)",
+      "onyx": "Onyx (Nam, Uy quyền)",
+      "nova": "Nova (Nữ, Tràn đầy năng lượng)",
+      "shimmer": "Shimmer (Nữ, Dịu dàng)",
+      "ash": "Ash (Nam, Cân bằng)",
+      "ballad": "Ballad (Nam, Mượt mà)",
+      "coral": "Coral (Nữ, Trong trẻo)",
+      "sage": "Sage (Trung tính, Điềm tĩnh)"
+    },
+    "generateButton": "Tạo giọng nói",
+    "downloadButton": "Tải xuống MP3",
+    "processing": "Đang xử lý...",
+    "characterCount": "Ký tự: {count}/4000",
+    "errorMessages": {
+      "emptyText": "Vui lòng nhập văn bản để chuyển đổi",
+      "tooLongText": "Văn bản vượt quá độ dài tối đa 4000 ký tự",
+      "failedGeneration": "Không thể tạo giọng nói. Vui lòng thử lại."
+    }
+  },
+  "footer": {
+    "company": "Công ty",
+    "about": "Về chúng tôi",
+    "careers": "Tuyển dụng",
+    "blog": "Blog",
+    "contact": "Liên hệ",
+    "legal": "Pháp lý",
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật",
+    "copyright": "© 2024 VoiceGenius. Bảo lưu mọi quyền.",
+    "resources": "Tài nguyên",
+    "documentation": "Tài liệu",
+    "api": "API",
+    "guides": "Hướng dẫn",
+    "support": "Trung tâm hỗ trợ",
+    "socials": "Kết nối với chúng tôi"
+  },
+  "languageSwitcher": {
+    "language": "Ngôn ngữ"
+  }
+} 
