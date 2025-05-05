@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import rateLimiter from '../../utils/rate-limiter';
+import { recordTTSUsage, getUserIdFromRequest } from '../../utils/tts-history';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -71,6 +72,20 @@ export async function POST(request: NextRequest) {
     }
 
     const clientIP = getClientIP(request);
+    
+    // Get user ID if they are logged in
+    const userId = await getUserIdFromRequest(request);
+    
+    // Record TTS usage without waiting for completion
+    recordTTSUsage({
+      text,
+      voice,
+      clientIP,
+      userId
+    }).catch(error => {
+      // Just log errors but don't fail the request
+      console.error('Failed to record TTS usage:', error);
+    });
     
     // Check if global rate limit has been exceeded
     const isLimitExceeded = await rateLimiter.hasExceededRateLimit();

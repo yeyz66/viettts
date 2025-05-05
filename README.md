@@ -10,12 +10,14 @@ A modern text-to-speech web application that leverages OpenAI's TTS models to co
 - Modern, responsive Apple-like design
 - Download audio files in MP3 format
 - Complete landing page with features, pricing, testimonials, and FAQ sections
+- Tracks usage history in Supabase database (user ID for logged-in users, IP address for anonymous users)
 
 ## Technology Stack
 
 - **Frontend**: Next.js, TypeScript, TailwindCSS, Framer Motion
 - **API**: Next.js API Routes
 - **Text-to-Speech**: OpenAI TTS API
+- **Database**: Supabase (PostgreSQL)
 - **Internationalization**: next-intl
 - **UI Components**: Headless UI, Heroicons
 
@@ -25,6 +27,7 @@ A modern text-to-speech web application that leverages OpenAI's TTS models to co
 
 - Node.js (v18 or newer)
 - An OpenAI API key (get one at https://platform.openai.com/api-keys)
+- A Supabase account and project (create one at https://supabase.com)
 
 ### Installation
 
@@ -44,9 +47,17 @@ cnpm install
 cp .env.local.example .env.local
 ```
 
-4. Edit `.env.local` and add your OpenAI API key:
+4. Edit `.env.local` and add your API keys:
 ```
 OPENAI_API_KEY=your_openai_api_key_here
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+```
+
+5. Set up the Supabase database tables:
+```bash
+npx ts-node -r dotenv/config app/utils/supabase-setup.ts
 ```
 
 ### Running the Development Server

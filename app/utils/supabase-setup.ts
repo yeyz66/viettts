@@ -52,6 +52,33 @@ export async function setupDatabase() {
     
     console.log('✅ tts_usage_counts table created successfully');
     
+    // Create tts_history table
+    const { error: createHistoryTableError } = await supabase.rpc('exec_sql', {
+      query: `
+        CREATE TABLE IF NOT EXISTS tts_history (
+          id SERIAL PRIMARY KEY,
+          created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+          client_ip TEXT NOT NULL,
+          user_id UUID,
+          text TEXT NOT NULL,
+          voice TEXT NOT NULL
+        );
+        
+        -- Add index on user_id for faster queries
+        CREATE INDEX IF NOT EXISTS tts_history_user_id_idx ON tts_history(user_id);
+        
+        -- Add index on client_ip for faster queries
+        CREATE INDEX IF NOT EXISTS tts_history_client_ip_idx ON tts_history(client_ip);
+      `
+    });
+    
+    if (createHistoryTableError) {
+      console.error('Error creating tts_history table:', createHistoryTableError);
+      throw createHistoryTableError;
+    }
+    
+    console.log('✅ tts_history table created successfully');
+    
     // Create increment_tts_count function
     const { error: createFunctionError } = await supabase.rpc('exec_sql', {
       query: `
