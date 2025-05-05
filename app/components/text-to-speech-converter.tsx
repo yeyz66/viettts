@@ -50,6 +50,8 @@ export default function TextToSpeechConverter() {
     sage: t('voices.sage')
   };
 
+  const [needsPolling, setNeedsPolling] = useState(true);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = e.target.value;
     if (newText.length <= MAX_LENGTH) {
@@ -90,7 +92,7 @@ export default function TextToSpeechConverter() {
     checkQueueStatus();
   };
 
-  // Generate speech function - defined first to avoid circular dependencies
+  // 修改generateSpeech函数，避免循环依赖
   const generateSpeech = useCallback(async () => {
     if (!text.trim()) {
       toast.error(t('errorMessages.emptyText'));
@@ -125,8 +127,15 @@ export default function TextToSpeechConverter() {
       
       setAudioUrl(url);
       
-      // If this was a queued request that completed, reset queue status
+      // 成功生成音频后，立即停止所有轮询
       setIsQueued(false);
+      setNeedsPolling(false);
+      
+      // 清除所有轮询间隔
+      if (queueCheckInterval) {
+        clearInterval(queueCheckInterval);
+        setQueueCheckInterval(null);
+      }
       
       // Automatically play the audio
       if (audioRef.current) {
@@ -143,22 +152,32 @@ export default function TextToSpeechConverter() {
           setIsQueued(true);
           setQueuePosition(data.position || 0);
           toast.info(data.message || 'Your request has been queued due to rate limiting.');
-          setShouldAutoGenerate(true); // Only set to auto-generate if explicitly requested
+          setShouldAutoGenerate(true);
           
-          // We'll set up queue checking in the effect
+          // 请求被加入队列时，必须启用轮询
+          setNeedsPolling(true);
+          
+          // 确保立即开始轮询 - 不直接调用startQueueCheck，通过设置状态触发
           setLastUpdateTime(new Date());
+          
+          // 更新队列长度以确保轮询启动
+          if (data.position) {
+            setQueueLength(Math.max(data.position, queueLength));
+          }
         } else {
           toast.error('Rate limit exceeded. Please try again later.');
+          // 仅在不加入队列的情况下才停止轮询
+          setNeedsPolling(false);
         }
       } else {
         toast.error(t('errorMessages.failedGeneration'));
-        // Reset isQueued if there's an error
         setIsQueued(false);
+        setNeedsPolling(false);
       }
     } finally {
       setIsGenerating(false);
     }
-  }, [text, voice, audioUrl, t]);
+  }, [text, voice, audioUrl, t, queueCheckInterval, queueLength]);
 
   // Handle explicit generate button click
   const handleGenerateClick = useCallback(() => {
@@ -166,15 +185,30 @@ export default function TextToSpeechConverter() {
     generateSpeech();
   }, [generateSpeech]);
 
-  // Start queue checking more frequently - also wrapped in useCallback
+  // 调整startQueueCheck函数
   const startQueueCheck = useCallback(() => {
-    // Clear any existing interval
+    // 如果已经有轮询在运行，先清除它
     if (queueCheckInterval) {
       clearInterval(queueCheckInterval);
     }
     
-    // Start a new interval to check queue status more frequently
+    // 只有在以下情况下不启动轮询：已有音频且不在队列中
+    if (audioUrl && !isQueued) {
+      setQueueCheckInterval(null);
+      setNeedsPolling(false);
+      return;
+    }
+    
+    // 创建新的轮询间隔
     const interval = setInterval(async () => {
+      // 如果已经有音频且不在队列中，立即停止轮询
+      if (audioUrl && !isQueued) {
+        clearInterval(interval);
+        setQueueCheckInterval(null);
+        setNeedsPolling(false);
+        return;
+      }
+      
       try {
         const response = await axios.get('/api/text-to-speech/queue-status');
         const { position, queueLength, globalLimitExceeded } = response.data;
@@ -182,26 +216,29 @@ export default function TextToSpeechConverter() {
         setQueuePosition(position);
         setQueueLength(queueLength);
         setGlobalLimitExceeded(globalLimitExceeded);
+        setLastUpdateTime(new Date());
         
-        // If position is 0, we're no longer in the queue
-        if (position === 0) {
-          // Reset queue status
-          setIsQueued(false);
+        // 仅当用户不再需要轮询时才停止
+        const shouldStopPolling = audioUrl && !isQueued && position === 0;
+        
+        if (shouldStopPolling) {
           clearInterval(interval);
           setQueueCheckInterval(null);
-          
-          // If we were queued before and now we're not, auto-generate
-          // only if we don't already have audio and should auto-generate is true
-          if (isQueued && !audioUrl && text.trim() && shouldAutoGenerate) {
-            // We'll trigger the auto-generate through the useEffect
-            setLastUpdateTime(new Date()); // Trigger a re-render
-          }
+          setNeedsPolling(false);
+          return;
         }
         
-        // If queue is empty and no global limit, stop polling
-        if (queueLength === 0 && !globalLimitExceeded) {
-          clearInterval(interval);
-          setQueueCheckInterval(null);
+        // 如果位置为0，用户不再在队列中
+        if (position === 0 && isQueued) {
+          setIsQueued(false);
+          
+          // 只有当满足以下所有条件时才自动生成
+          if (!audioUrl && text.trim() && shouldAutoGenerate) {
+            // 通过useEffect触发自动生成
+            setLastUpdateTime(new Date());
+          }
+        } else if (position > 0) {
+          setIsQueued(true);
         }
       } catch (error) {
         console.error('Error checking queue status:', error);
@@ -209,10 +246,16 @@ export default function TextToSpeechConverter() {
     }, ACTIVE_POLL_INTERVAL);
     
     setQueueCheckInterval(interval);
-  }, [queueCheckInterval, isQueued, audioUrl, text, shouldAutoGenerate]);
+  }, [audioUrl, isQueued, queueCheckInterval, shouldAutoGenerate, text]);
 
-  // Function to check queue status wrapped in useCallback
+  // 修改checkQueueStatus函数
   const checkQueueStatus = useCallback(async () => {
+    // 如果已经有音频且不在队列中，不检查队列状态
+    if (audioUrl && !isQueued) {
+      setNeedsPolling(false);
+      return;
+    }
+    
     try {
       const response = await axios.get('/api/text-to-speech/queue-status');
       const { position, queueLength, globalLimitExceeded } = response.data;
@@ -222,53 +265,113 @@ export default function TextToSpeechConverter() {
       setGlobalLimitExceeded(globalLimitExceeded);
       setLastUpdateTime(new Date());
       
+      // 修改轮询条件：只要满足以下任一条件就需要轮询
+      // 1. 用户有请求在队列中
+      // 2. 存在全局限制且用户尚未生成音频
+      // 3. 队列中有其他请求且用户尚未生成音频
+      const shouldPoll = position > 0 || 
+                         (globalLimitExceeded && !audioUrl) || 
+                         (queueLength > 0 && !audioUrl && isQueued);
+      
+      setNeedsPolling(shouldPoll);
+      
+      // 如果需要轮询且没有活跃的轮询，则启动轮询
+      if (shouldPoll && !queueCheckInterval) {
+        startQueueCheck();
+      } else if (!shouldPoll && queueCheckInterval) {
+        // 如果不需要轮询但存在活跃的轮询，则停止轮询
+        clearInterval(queueCheckInterval);
+        setQueueCheckInterval(null);
+      }
+      
+      // 更新是否在队列中
       if (position > 0) {
         setIsQueued(true);
-        // Start more frequent polling if user is in queue
-        startQueueCheck();
-      } else if (queueLength > 0 || globalLimitExceeded) {
-        // If there are others in queue but not us, or if global limit is exceeded,
-        // we still want more frequent updates
-        startQueueCheck();
+      } else if (position === 0 && isQueued) {
+        setIsQueued(false);
       }
     } catch (error) {
       console.error('Error checking queue status:', error);
     }
-  }, [startQueueCheck]);
+  }, [startQueueCheck, audioUrl, isQueued, queueCheckInterval]);
 
-  // Check queue status on component mount
+  // 重写组件挂载时的轮询设置
   useEffect(() => {
+    // 只在组件首次加载时执行一次初始检查
     checkQueueStatus();
     
-    // Start with the normal polling interval
-    const interval = setInterval(checkQueueStatus, NORMAL_POLL_INTERVAL);
+    let interval: NodeJS.Timeout | null = null;
+    
+    // 只有在特定条件下才启动常规轮询
+    if (needsPolling && !audioUrl) {
+      interval = setInterval(() => {
+        // 再次检查条件，确保即使状态变化也能正确处理
+        if (!needsPolling || audioUrl) {
+          if (interval) {
+            clearInterval(interval);
+            interval = null;
+          }
+          return;
+        }
+        checkQueueStatus();
+      }, NORMAL_POLL_INTERVAL);
+    }
     
     return () => {
-      clearInterval(interval);
-      if (audioUrl) {
-        URL.revokeObjectURL(audioUrl);
+      // 清理所有轮询
+      if (interval) {
+        clearInterval(interval);
       }
       if (queueCheckInterval) {
         clearInterval(queueCheckInterval);
       }
+      // 释放音频资源
+      if (audioUrl) {
+        URL.revokeObjectURL(audioUrl);
+      }
     };
-  }, [audioUrl, checkQueueStatus, queueCheckInterval]);
+  }, [checkQueueStatus, needsPolling, audioUrl, queueCheckInterval]);
 
-  // Add a useEffect to ensure queue status is cleaned up properly
-  // and to handle auto-generation when queue position reaches 0
+  // 确保音频生成后状态一致性，并不再需要轮询
   useEffect(() => {
-    // If we have audio and are still marked as queued, fix this inconsistent state
-    if (audioUrl && isQueued) {
+    // 如果有音频，确保不再轮询
+    if (audioUrl) {
+      // 重置队列状态
       setIsQueued(false);
+      setNeedsPolling(false);
+      
+      // 清除所有轮询间隔
+      if (queueCheckInterval) {
+        clearInterval(queueCheckInterval);
+        setQueueCheckInterval(null);
+      }
     }
-    
-    // Auto-generate when we're no longer queued, only if shouldAutoGenerate is true
+  }, [audioUrl, queueCheckInterval]);
+
+  // 处理自动生成的逻辑
+  useEffect(() => {
+    // 确保只有在满足以下条件才自动生成：
+    // 1. 不在队列中
+    // 2. 队列位置为0
+    // 3. 没有现有音频
+    // 4. 有文本内容
+    // 5. shouldAutoGenerate标志为true (只在点击按钮或队列处理完成后才设置为true)
     if (!isQueued && queuePosition === 0 && !audioUrl && text.trim() && shouldAutoGenerate) {
+      // 确保这个自动生成仅在队列处理完成后触发，不会因为文本变化而触发
       generateSpeech();
-      // Reset the flag after generating
+      // 生成后重置标志
       setShouldAutoGenerate(false);
     }
-  }, [audioUrl, isQueued, queuePosition, generateSpeech, text, shouldAutoGenerate]);
+  }, [isQueued, queuePosition, audioUrl, shouldAutoGenerate, generateSpeech]);
+
+  // 添加一个新的useEffect，确保文本变化不会触发生成
+  useEffect(() => {
+    // 文本变化时，确保不会自动生成
+    // 除非之前已经在队列中，并且队列处理完成
+    if (!isQueued) {
+      setShouldAutoGenerate(false);
+    }
+  }, [text, isQueued]);
 
   return (
     <div className="bg-gray-50 dark:bg-gray-950 py-8 sm:py-12">
