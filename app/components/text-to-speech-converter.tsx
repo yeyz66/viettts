@@ -29,6 +29,7 @@ export default function TextToSpeechConverter() {
   const [globalLimitExceeded, setGlobalLimitExceeded] = useState(false);
   const [queueCheckInterval, setQueueCheckInterval] = useState<NodeJS.Timeout | null>(null);
   const [lastUpdateTime, setLastUpdateTime] = useState<Date>(new Date());
+  const [shouldAutoGenerate, setShouldAutoGenerate] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const MAX_LENGTH = parseInt(process.env.NEXT_PUBLIC_TEXT_INPUT_CHAR_LIMIT || '1000');
   
@@ -142,6 +143,7 @@ export default function TextToSpeechConverter() {
           setIsQueued(true);
           setQueuePosition(data.position || 0);
           toast.info(data.message || 'Your request has been queued due to rate limiting.');
+          setShouldAutoGenerate(true); // Only set to auto-generate if explicitly requested
           
           // We'll set up queue checking in the effect
           setLastUpdateTime(new Date());
@@ -157,6 +159,12 @@ export default function TextToSpeechConverter() {
       setIsGenerating(false);
     }
   }, [text, voice, audioUrl, t]);
+
+  // Handle explicit generate button click
+  const handleGenerateClick = useCallback(() => {
+    setShouldAutoGenerate(true);
+    generateSpeech();
+  }, [generateSpeech]);
 
   // Start queue checking more frequently - also wrapped in useCallback
   const startQueueCheck = useCallback(() => {
@@ -183,8 +191,8 @@ export default function TextToSpeechConverter() {
           setQueueCheckInterval(null);
           
           // If we were queued before and now we're not, auto-generate
-          // only if we don't already have audio (to avoid multiple generations)
-          if (isQueued && !audioUrl && text.trim()) {
+          // only if we don't already have audio and should auto-generate is true
+          if (isQueued && !audioUrl && text.trim() && shouldAutoGenerate) {
             // We'll trigger the auto-generate through the useEffect
             setLastUpdateTime(new Date()); // Trigger a re-render
           }
@@ -201,7 +209,7 @@ export default function TextToSpeechConverter() {
     }, ACTIVE_POLL_INTERVAL);
     
     setQueueCheckInterval(interval);
-  }, [queueCheckInterval, isQueued, audioUrl, text]);
+  }, [queueCheckInterval, isQueued, audioUrl, text, shouldAutoGenerate]);
 
   // Function to check queue status wrapped in useCallback
   const checkQueueStatus = useCallback(async () => {
@@ -254,11 +262,13 @@ export default function TextToSpeechConverter() {
       setIsQueued(false);
     }
     
-    // Auto-generate when we're no longer queued
-    if (!isQueued && queuePosition === 0 && !audioUrl && text.trim()) {
+    // Auto-generate when we're no longer queued, only if shouldAutoGenerate is true
+    if (!isQueued && queuePosition === 0 && !audioUrl && text.trim() && shouldAutoGenerate) {
       generateSpeech();
+      // Reset the flag after generating
+      setShouldAutoGenerate(false);
     }
-  }, [audioUrl, isQueued, queuePosition, generateSpeech, text]);
+  }, [audioUrl, isQueued, queuePosition, generateSpeech, text, shouldAutoGenerate]);
 
   return (
     <div className="bg-gray-50 dark:bg-gray-950 py-8 sm:py-12">
@@ -445,7 +455,7 @@ export default function TextToSpeechConverter() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   type="button"
-                  onClick={generateSpeech}
+                  onClick={handleGenerateClick}
                   disabled={isGenerating || isQueued}
                   className="flex-1 rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
