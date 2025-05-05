@@ -177,7 +177,7 @@ export default function TextToSpeechConverter() {
     } finally {
       setIsGenerating(false);
     }
-  }, [text, voice, audioUrl, t, queueCheckInterval, queueLength]);
+  }, [text, voice, audioUrl, t, queueCheckInterval, queueLength, MAX_LENGTH]);
 
   // Handle explicit generate button click
   const handleGenerateClick = useCallback(() => {
@@ -362,7 +362,7 @@ export default function TextToSpeechConverter() {
       // 生成后重置标志
       setShouldAutoGenerate(false);
     }
-  }, [isQueued, queuePosition, audioUrl, shouldAutoGenerate, generateSpeech]);
+  }, [isQueued, queuePosition, audioUrl, shouldAutoGenerate, generateSpeech, text]);
 
   // 添加一个新的useEffect，确保文本变化不会触发生成
   useEffect(() => {

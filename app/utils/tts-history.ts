@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js';
-import { cookies } from 'next/headers';
 
 // Initialize the Supabase client with admin key for server operations
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -45,28 +44,15 @@ export async function recordTTSUsage({
 }
 
 // Get user ID from session if available
-export async function getUserIdFromRequest(request: Request): Promise<string | null> {
+export async function getUserIdFromRequest(): Promise<string | null> {
   try {
-    // Create a Supabase client with cookies for auth
-    const cookieStore = cookies();
-    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        detectSessionInUrl: true,
-        storageKey: 'sb-auth-token',
-        cookies: {
-          get(name: string) {
-            return cookieStore.get(name)?.value;
-          },
-        },
-      },
-    });
+    // 创建一个简单的服务器端supabase客户端
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Get session data
+    // 获取会话数据
     const { data: { session } } = await supabase.auth.getSession();
     
-    // Return user ID if session exists
+    // 如果会话存在，返回用户ID
     return session?.user?.id || null;
   } catch (error) {
     console.error('Error getting user ID from session:', error);

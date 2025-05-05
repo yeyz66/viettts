@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
     const clientIP = getClientIP(request);
     
     // Get user ID if they are logged in
-    const userId = await getUserIdFromRequest(request);
+    const userId = await getUserIdFromRequest();
     
     // Record TTS usage without waiting for completion
     recordTTSUsage({
