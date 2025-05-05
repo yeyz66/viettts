@@ -41,7 +41,7 @@ class TTSRateLimiter {
   private _processRequestImpl: (payload: { text: string; voice: string }) => Promise<ArrayBuffer>;
 
   private constructor() {
-    this.freeUserLimit = Number(process.env.FREE_USER_TTS_LIMIT_PER_MINUTE) || 5;
+    this.freeUserLimit = Number(process.env.FREE_USER_TTS_LIMIT_PER_MINUTE) || 1;
     
     // Set the default implementation for processing TTS requests
     this._processRequestImpl = async (payload: { text: string; voice: string }): Promise<ArrayBuffer> => {

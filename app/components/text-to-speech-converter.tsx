@@ -312,7 +312,7 @@ export default function TextToSpeechConverter() {
                     <div className="ml-3 w-full">
                       <h3 className="text-sm font-medium text-amber-800 dark:text-amber-200">{t('rateLimitActive')}</h3>
                       <div className="mt-2 text-sm text-amber-700 dark:text-amber-300">
-                        <p>{t.rich('maxRequestsMessage', { limit: process.env.FREE_USER_TTS_LIMIT_PER_MINUTE || '5' })}</p>
+                        <p>{t.rich('maxRequestsMessage', { limit: process.env.NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_MINUTE || '1' })}</p>
                         <p className="mt-1">{t('queueAddedMessage')}</p>
                         <div className="mt-2 py-2 px-3 bg-amber-100 dark:bg-amber-800/30 rounded">
                           <div className="flex items-center justify-between">
@@ -494,7 +494,7 @@ export default function TextToSpeechConverter() {
             {t('instructions')}
           </div>
           <div className="mt-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-md text-xs text-gray-500 dark:text-gray-400">
-            <p>{t.rich('rateLimitNotice', { limit: process.env.FREE_USER_TTS_LIMIT_PER_MINUTE || '5' })}</p>
+            <p>{t.rich('rateLimitNotice', { limit: process.env.NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_MINUTE || '1' })}</p>
             <p className="mt-1">{t('queueNotice')}</p>
           </div>
         </div>
