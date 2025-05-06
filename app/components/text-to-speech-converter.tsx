@@ -50,7 +50,7 @@ export default function TextToSpeechConverter() {
     sage: t('voices.sage')
   };
 
-  const [needsPolling, setNeedsPolling] = useState(true);
+  const [needsPolling, setNeedsPolling] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = e.target.value;
@@ -192,8 +192,8 @@ export default function TextToSpeechConverter() {
       clearInterval(queueCheckInterval);
     }
     
-    // 只有在以下情况下不启动轮询：已有音频且不在队列中
-    if (audioUrl && !isQueued) {
+    // 只有在以下情况下不启动轮询：已有音频且不在队列中，或者用户没有尝试生成且不在队列中
+    if ((audioUrl && !isQueued) || (!shouldAutoGenerate && !isQueued)) {
       setQueueCheckInterval(null);
       setNeedsPolling(false);
       return;
@@ -201,8 +201,8 @@ export default function TextToSpeechConverter() {
     
     // 创建新的轮询间隔
     const interval = setInterval(async () => {
-      // 如果已经有音频且不在队列中，立即停止轮询
-      if (audioUrl && !isQueued) {
+      // 如果已经有音频且不在队列中，或者用户没有尝试生成且不在队列中，立即停止轮询
+      if ((audioUrl && !isQueued) || (!shouldAutoGenerate && !isQueued)) {
         clearInterval(interval);
         setQueueCheckInterval(null);
         setNeedsPolling(false);
@@ -219,7 +219,8 @@ export default function TextToSpeechConverter() {
         setLastUpdateTime(new Date());
         
         // 仅当用户不再需要轮询时才停止
-        const shouldStopPolling = audioUrl && !isQueued && position === 0;
+        const shouldStopPolling = (audioUrl && !isQueued && position === 0) || 
+                                 (!shouldAutoGenerate && !isQueued);
         
         if (shouldStopPolling) {
           clearInterval(interval);
@@ -256,6 +257,12 @@ export default function TextToSpeechConverter() {
       return;
     }
     
+    // 如果用户没有交互过（没有点击生成按钮）且不在队列中，不检查队列状态
+    if (!shouldAutoGenerate && !isQueued) {
+      setNeedsPolling(false);
+      return;
+    }
+    
     try {
       const response = await axios.get('/api/text-to-speech/queue-status');
       const { position, queueLength, globalLimitExceeded } = response.data;
@@ -267,10 +274,10 @@ export default function TextToSpeechConverter() {
       
       // 修改轮询条件：只要满足以下任一条件就需要轮询
       // 1. 用户有请求在队列中
-      // 2. 存在全局限制且用户尚未生成音频
-      // 3. 队列中有其他请求且用户尚未生成音频
+      // 2. 存在全局限制且用户尚未生成音频且用户已经尝试生成
+      // 3. 队列中有其他请求且用户尚未生成音频且用户已经尝试生成
       const shouldPoll = position > 0 || 
-                         (globalLimitExceeded && !audioUrl) || 
+                         (globalLimitExceeded && !audioUrl && shouldAutoGenerate) || 
                          (queueLength > 0 && !audioUrl && isQueued);
       
       setNeedsPolling(shouldPoll);
@@ -293,12 +300,17 @@ export default function TextToSpeechConverter() {
     } catch (error) {
       console.error('Error checking queue status:', error);
     }
-  }, [startQueueCheck, audioUrl, isQueued, queueCheckInterval]);
+  }, [startQueueCheck, audioUrl, isQueued, queueCheckInterval, shouldAutoGenerate]);
 
   // 重写组件挂载时的轮询设置
   useEffect(() => {
-    // 只在组件首次加载时执行一次初始检查
-    checkQueueStatus();
+    // 只在用户已经点击生成按钮或者已经在队列中的情况下执行初始检查
+    if (shouldAutoGenerate || isQueued) {
+      checkQueueStatus();
+    } else {
+      // 如果用户尚未交互，将needsPolling设置为false，禁止轮询
+      setNeedsPolling(false);
+    }
     
     let interval: NodeJS.Timeout | null = null;
     
@@ -330,7 +342,7 @@ export default function TextToSpeechConverter() {
         URL.revokeObjectURL(audioUrl);
       }
     };
-  }, [checkQueueStatus, needsPolling, audioUrl, queueCheckInterval]);
+  }, [checkQueueStatus, needsPolling, audioUrl, queueCheckInterval, shouldAutoGenerate, isQueued]);
 
   // 确保音频生成后状态一致性，并不再需要轮询
   useEffect(() => {

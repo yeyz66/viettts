@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16 lg:px-8">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div className="xl:grid xl:grid-cols-2 xl:gap-8">
           <div className="space-y-8">
             <Link href="#" className="flex items-center">
               <span className="text-xl font-bold text-indigo-400">VoiceGenius</span>
@@ -41,75 +41,46 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">{t('company')}</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('about')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('careers')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('blog')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('contact')}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">{t('legal')}</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('terms')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('privacy')}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:mt-0">
+            <div>
+              <h3 className="text-sm font-semibold leading-6 text-white">{t('legal')}</h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li>
+                  <Link href="/terms-of-service" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    {t('terms')}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy-policy" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    {t('privacy')}
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">{t('resources')}</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('documentation')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('api')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('guides')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      {t('support')}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <h3 className="text-sm font-semibold leading-6 text-white">{t('resources')}</h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li>
+                  <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    {t('documentation')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    {t('api')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    {t('guides')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    {t('support')}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

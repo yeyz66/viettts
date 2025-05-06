@@ -200,5 +200,158 @@
   },
   "languageSwitcher": {
     "language": "Ngôn ngữ"
+  },
+  "termsOfService": {
+    "title": "Điều khoản dịch vụ",
+    "lastUpdated": "Cập nhật lần cuối: Ngày 1 tháng 7 năm 2024",
+    "introduction": {
+      "title": "Giới thiệu",
+      "p1": "Chào mừng bạn đến với VoiceGenius. Những Điều khoản Dịch vụ ('Điều khoản') này quy định việc bạn sử dụng trang web, sản phẩm và dịch vụ ('Dịch vụ') của chúng tôi.",
+      "p2": "Bằng cách truy cập hoặc sử dụng Dịch vụ của chúng tôi, bạn đồng ý chịu ràng buộc bởi các Điều khoản này. Nếu bạn không đồng ý với bất kỳ phần nào của Điều khoản, bạn không được phép truy cập vào Dịch vụ.",
+      "p3": "Chúng tôi có thể cập nhật các Điều khoản này theo thời gian. Việc bạn tiếp tục sử dụng Dịch vụ sau khi đăng tải các Điều khoản sửa đổi có nghĩa là bạn chấp nhận và đồng ý với các thay đổi."
+    },
+    "serviceDescription": {
+      "title": "Mô tả dịch vụ",
+      "p1": "VoiceGenius cung cấp dịch vụ chuyển đổi văn bản thành giọng nói cho phép bạn biến đổi văn bản viết thành tệp âm thanh giọng nói sử dụng công nghệ trí tuệ nhân tạo.",
+      "p2": "Dịch vụ của chúng tôi bao gồm nhiều tùy chọn giọng nói, hỗ trợ ngôn ngữ và tính năng tùy chỉnh âm thanh như được mô tả trên trang web của chúng tôi."
+    },
+    "userAccounts": {
+      "title": "Tài khoản người dùng",
+      "p1": "Khi bạn tạo tài khoản với chúng tôi, bạn phải cung cấp thông tin chính xác, đầy đủ và cập nhật. Bạn chịu trách nhiệm bảo vệ thông tin đăng nhập tài khoản của mình.",
+      "p2": "Bạn chịu trách nhiệm về tất cả các hoạt động diễn ra trong tài khoản của bạn. Bạn phải thông báo cho chúng tôi ngay lập tức về bất kỳ việc sử dụng trái phép tài khoản của bạn hoặc bất kỳ vi phạm bảo mật nào khác.",
+      "p3": "Chúng tôi bảo lưu quyền chấm dứt tài khoản, xóa hoặc chỉnh sửa nội dung, hoặc hủy đơn hàng theo quyết định riêng của chúng tôi."
+    },
+    "paymentTerms": {
+      "title": "Điều khoản thanh toán",
+      "p1": "Chúng tôi cung cấp cả gói đăng ký miễn phí và trả phí. Bằng cách chọn đăng ký trả phí, bạn đồng ý thanh toán các khoản phí đã chỉ định.",
+      "p2": "Nếu bạn chọn đăng ký với các khoản thanh toán định kỳ, bạn cho phép chúng tôi tính phí phương thức thanh toán của bạn trên cơ sở định kỳ cho đến khi bạn hủy đăng ký.",
+      "p3": "Giá cho Dịch vụ của chúng tôi có thể thay đổi sau khi thông báo 30 ngày. Thông báo như vậy có thể được cung cấp bằng cách đăng các thay đổi trên trang web hoặc qua email."
+    },
+    "contentPolicies": {
+      "title": "Chính sách nội dung",
+      "p1": "Bạn giữ tất cả quyền đối với nội dung bạn gửi tới Dịch vụ của chúng tôi. Bằng cách tải lên hoặc nhập văn bản, bạn cấp cho chúng tôi giấy phép không độc quyền để xử lý nội dung đó chỉ nhằm mục đích cung cấp Dịch vụ cho bạn.",
+      "p2": "Bạn không được sử dụng Dịch vụ của chúng tôi để tạo nội dung bất hợp pháp, có hại, đe dọa, lạm dụng, quấy rối, phỉ báng hoặc gây khó chịu.",
+      "p3": "Chúng tôi bảo lưu quyền xóa bất kỳ nội dung nào vi phạm các Điều khoản này hoặc nội dung mà chúng tôi xác định là có hại hoặc gây khó chịu."
+    },
+    "intellectualProperty": {
+      "title": "Sở hữu trí tuệ",
+      "p1": "Dịch vụ và nội dung gốc, tính năng và chức năng của nó thuộc sở hữu của VoiceGenius và được bảo vệ bởi luật bản quyền quốc tế, thương hiệu và các luật sở hữu trí tuệ khác.",
+      "p2": "Các tệp âm thanh được tạo thông qua Dịch vụ của chúng tôi có thể được bạn sử dụng theo gói đăng ký của bạn. Gói cơ bản có thể có giới hạn về sử dụng thương mại trong khi các gói trả phí bao gồm quyền sử dụng thương mại."
+    },
+    "limitations": {
+      "title": "Giới hạn trách nhiệm",
+      "p1": "Trong mọi trường hợp, VoiceGenius cũng như giám đốc, nhân viên, đối tác, đại lý, nhà cung cấp hoặc công ty liên kết của chúng tôi, sẽ không chịu trách nhiệm đối với bất kỳ thiệt hại gián tiếp, ngẫu nhiên, đặc biệt, do hậu quả hoặc mang tính trừng phạt, bao gồm nhưng không giới hạn, mất lợi nhuận, dữ liệu, sử dụng, uy tín hoặc các tổn thất vô hình khác.",
+      "p2": "VoiceGenius sẽ không chịu trách nhiệm đối với bất kỳ thiệt hại nào có thể xảy ra do việc bạn sử dụng Dịch vụ của chúng tôi, bao gồm bất kỳ lỗi hoặc thiếu sót nào trong bất kỳ nội dung nào, hoặc bất kỳ tổn thất hoặc thiệt hại nào phát sinh do việc sử dụng bất kỳ nội dung nào được đăng tải, truyền đi hoặc cung cấp thông qua Dịch vụ."
+    },
+    "privacy": {
+      "title": "Quyền riêng tư",
+      "p1": "Việc bạn sử dụng Dịch vụ của chúng tôi cũng chịu sự quản lý của Chính sách Quyền riêng tư, có thể được tìm thấy trên trang web của chúng tôi. Bằng cách sử dụng Dịch vụ của chúng tôi, bạn đồng ý với việc thu thập và sử dụng thông tin theo chi tiết trong Chính sách Quyền riêng tư của chúng tôi."
+    },
+    "termination": {
+      "title": "Chấm dứt",
+      "p1": "Chúng tôi có thể chấm dứt hoặc đình chỉ tài khoản của bạn và cấm truy cập vào Dịch vụ ngay lập tức, mà không cần thông báo trước hoặc trách nhiệm pháp lý, theo quyết định riêng của chúng tôi, vì bất kỳ lý do gì, bao gồm nhưng không giới hạn ở việc vi phạm Điều khoản.",
+      "p2": "Tất cả các điều khoản của Điều khoản mà theo bản chất của chúng nên tồn tại sau khi chấm dứt sẽ vẫn tồn tại sau khi chấm dứt, bao gồm, nhưng không giới hạn, các điều khoản về quyền sở hữu, tuyên bố từ chối bảo hành, bồi thường và giới hạn trách nhiệm."
+    },
+    "changes": {
+      "title": "Thay đổi Điều khoản",
+      "p1": "Chúng tôi bảo lưu quyền, theo quyết định riêng của mình, sửa đổi hoặc thay thế các Điều khoản này bất cứ lúc nào. Nếu một bản sửa đổi là quan trọng, chúng tôi sẽ cung cấp thông báo ít nhất 30 ngày trước khi bất kỳ điều khoản mới nào có hiệu lực. Những gì tạo nên một thay đổi quan trọng sẽ được xác định theo quyết định riêng của chúng tôi."
+    },
+    "contact": {
+      "title": "Liên hệ với chúng tôi",
+      "p1": "Nếu bạn có bất kỳ câu hỏi nào về các Điều khoản này, vui lòng liên hệ với chúng tôi tại support@voicegenius.com."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Chính Sách Bảo Mật",
+    "lastUpdated": "Cập nhật lần cuối: Ngày 1 tháng 7 năm 2024",
+    "introduction": {
+      "title": "Giới thiệu",
+      "p1": "VoiceGenius (\"chúng tôi\", \"của chúng tôi\") cam kết bảo vệ quyền riêng tư của bạn. Chính sách Bảo mật này giải thích cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin của bạn khi bạn truy cập trang web của chúng tôi và sử dụng dịch vụ chuyển văn bản thành giọng nói.",
+      "p2": "Bằng cách truy cập hoặc sử dụng dịch vụ của chúng tôi, bạn đồng ý với việc thu thập, sử dụng, tiết lộ và lưu trữ thông tin của bạn như được mô tả trong Chính sách Bảo mật này. Nếu bạn không đồng ý với các chính sách và thực tiễn của chúng tôi, vui lòng không sử dụng dịch vụ của chúng tôi."
+    },
+    "infoCollected": {
+      "title": "Thông Tin Chúng Tôi Thu Thập",
+      "p1": "Chúng tôi thu thập một số loại thông tin từ và về người dùng dịch vụ của chúng tôi, bao gồm:",
+      "personalInfo": {
+        "title": "Thông Tin Cá Nhân",
+        "p1": "Chúng tôi có thể thu thập thông tin cá nhân mà bạn tự nguyện cung cấp cho chúng tôi khi bạn:",
+        "item1": "Tạo tài khoản",
+        "item2": "Đăng ký dịch vụ của chúng tôi",
+        "item3": "Liên hệ với đội ngũ hỗ trợ của chúng tôi",
+        "item4": "Tham gia khảo sát hoặc chương trình khuyến mãi"
+      },
+      "usageData": {
+        "title": "Dữ Liệu Sử Dụng",
+        "p1": "Chúng tôi tự động thu thập một số thông tin về cách bạn tương tác với dịch vụ của chúng tôi, bao gồm địa chỉ IP, loại trình duyệt, hệ điều hành, URL tham chiếu, thời gian truy cập và các trang đã xem. Ngoài ra, chúng tôi thu thập thông tin liên quan đến nội dung văn bản bạn gửi để chuyển đổi thành giọng nói và mô hình sử dụng các tính năng chuyển văn bản thành giọng nói của chúng tôi."
+      }
+    },
+    "dataSecurity": {
+      "title": "Bảo Mật Dữ Liệu",
+      "p1": "Chúng tôi thực hiện các biện pháp bảo mật kỹ thuật và tổ chức thích hợp được thiết kế để bảo vệ thông tin cá nhân của bạn khỏi truy cập, tiết lộ, thay đổi và phá hủy trái phép.",
+      "p2": "Tuy nhiên, không có phương thức truyền qua Internet hoặc lưu trữ điện tử nào an toàn 100%. Mặc dù chúng tôi cố gắng sử dụng các phương tiện thương mại chấp nhận được để bảo vệ thông tin cá nhân của bạn, chúng tôi không thể đảm bảo an ninh tuyệt đối."
+    },
+    "dataUse": {
+      "title": "Cách Chúng Tôi Sử Dụng Thông Tin Của Bạn",
+      "p1": "Chúng tôi có thể sử dụng thông tin chúng tôi thu thập cho nhiều mục đích, bao gồm:",
+      "item1": "Cung cấp, duy trì và cải thiện dịch vụ của chúng tôi",
+      "item2": "Xử lý giao dịch và gửi thông tin liên quan",
+      "item3": "Phản hồi nhận xét, câu hỏi và yêu cầu của bạn",
+      "item4": "Gửi cho bạn thông báo kỹ thuật, cập nhật, cảnh báo bảo mật và tin nhắn hỗ trợ",
+      "item5": "Theo dõi mô hình sử dụng và phân tích xu hướng để nâng cao trải nghiệm người dùng"
+    },
+    "cookies": {
+      "title": "Cookie và Công Nghệ Theo Dõi",
+      "p1": "Chúng tôi sử dụng cookie và các công nghệ theo dõi tương tự để theo dõi hoạt động trên dịch vụ của chúng tôi và lưu giữ một số thông tin. Cookie là tệp có một lượng nhỏ dữ liệu có thể bao gồm một mã định danh duy nhất ẩn danh.",
+      "p2": "Bạn có thể hướng dẫn trình duyệt của mình từ chối tất cả cookie hoặc chỉ báo khi cookie đang được gửi. Tuy nhiên, nếu bạn không chấp nhận cookie, bạn có thể không sử dụng được một số phần của dịch vụ chúng tôi."
+    },
+    "thirdParty": {
+      "title": "Dịch Vụ Bên Thứ Ba",
+      "p1": "Dịch vụ của chúng tôi có thể chứa liên kết đến trang web, dịch vụ hoặc ứng dụng của bên thứ ba không do chúng tôi vận hành. Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung, chính sách bảo mật hoặc thực tiễn của bất kỳ dịch vụ bên thứ ba nào.",
+      "p2": "Chúng tôi có thể sử dụng các nhà cung cấp dịch vụ bên thứ ba để giúp chúng tôi vận hành doanh nghiệp hoặc quản lý các hoạt động thay mặt chúng tôi, chẳng hạn như gửi thông tin liên lạc hoặc phân tích dữ liệu sử dụng. Chúng tôi có thể chia sẻ thông tin của bạn với các bên thứ ba này, nhưng chỉ trong phạm vi cần thiết để thực hiện các dịch vụ này thay mặt chúng tôi và theo các nghĩa vụ tương tự như trong Chính sách Bảo mật này."
+    },
+    "dataSharingDisclosure": {
+      "title": "Chia Sẻ và Tiết Lộ Thông Tin",
+      "p1": "Chúng tôi có thể tiết lộ thông tin cá nhân của bạn trong các trường hợp sau:",
+      "item1": "Để tuân thủ nghĩa vụ pháp lý, chẳng hạn như để phản hồi lệnh triệu tập, lệnh tòa án hoặc quy trình pháp lý",
+      "item2": "Để bảo vệ và bảo vệ quyền hoặc tài sản của chúng tôi",
+      "item3": "Để ngăn chặn hoặc điều tra hành vi sai trái có thể xảy ra liên quan đến dịch vụ",
+      "item4": "Với sự đồng ý của bạn hoặc theo chỉ đạo của bạn"
+    },
+    "userRights": {
+      "title": "Quyền Riêng Tư Của Bạn",
+      "p1": "Tùy thuộc vào vị trí của bạn, bạn có thể có một số quyền nhất định liên quan đến thông tin cá nhân của bạn, bao gồm:",
+      "item1": "Quyền truy cập thông tin cá nhân chúng tôi lưu giữ về bạn",
+      "item2": "Quyền yêu cầu sửa chữa thông tin cá nhân không chính xác",
+      "item3": "Quyền yêu cầu xóa thông tin cá nhân của bạn",
+      "item4": "Quyền phản đối việc xử lý thông tin cá nhân của bạn",
+      "item5": "Quyền truy cập dữ liệu"
+    },
+    "californiaPrivacy": {
+      "title": "Quyền Riêng Tư tại California",
+      "p1": "Nếu bạn là cư dân California, bạn có các quyền cụ thể liên quan đến thông tin cá nhân của bạn theo Đạo luật Bảo vệ Quyền riêng tư Người tiêu dùng California (CCPA) và Đạo luật Quyền riêng tư California (CPRA).",
+      "p2": "Bạn có quyền yêu cầu tiết lộ các loại và các mục cụ thể về thông tin cá nhân mà chúng tôi đã thu thập về bạn, các nguồn từ đó thông tin cá nhân được thu thập, mục đích kinh doanh để thu thập thông tin cá nhân và các loại bên thứ ba mà chúng tôi chia sẻ thông tin cá nhân."
+    },
+    "internationalUsers": {
+      "title": "Người Dùng Quốc Tế",
+      "p1": "Dịch vụ của chúng tôi được lưu trữ và vận hành tại Hoa Kỳ. Nếu bạn đang truy cập dịch vụ của chúng tôi từ bên ngoài Hoa Kỳ, xin lưu ý rằng thông tin của bạn có thể được chuyển đến, lưu trữ và xử lý tại Hoa Kỳ, nơi máy chủ của chúng tôi đặt tại đó. Bằng cách sử dụng dịch vụ của chúng tôi, bạn đồng ý với việc chuyển thông tin của bạn đến Hoa Kỳ và hiểu rằng thông tin của bạn có thể tuân theo luật pháp Hoa Kỳ, có thể khác với luật pháp của quốc gia cư trú của bạn.",
+      "vietnam": {
+        "title": "Người Dùng Việt Nam",
+        "p1": "Đối với người dùng tại Việt Nam, chúng tôi tuân thủ Luật An toàn thông tin mạng và các luật Bảo vệ dữ liệu cá nhân của Việt Nam. Chúng tôi xin sự đồng ý của bạn trước khi thu thập thông tin cá nhân và thực hiện các biện pháp bảo mật thích hợp để bảo vệ dữ liệu của bạn.",
+        "p2": "Trong trường hợp xảy ra vi phạm dữ liệu ảnh hưởng đến người dùng tại Việt Nam, chúng tôi sẽ thông báo cho người dùng bị ảnh hưởng và các cơ quan có liên quan theo luật pháp Việt Nam."
+      }
+    },
+    "childrenPrivacy": {
+      "title": "Quyền Riêng Tư Của Trẻ Em",
+      "p1": "Dịch vụ của chúng tôi không hướng đến bất kỳ ai dưới 13 tuổi. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em dưới 13 tuổi. Nếu bạn là cha mẹ hoặc người giám hộ và bạn biết rằng con bạn đã cung cấp cho chúng tôi thông tin cá nhân, vui lòng liên hệ với chúng tôi. Nếu chúng tôi biết được rằng chúng tôi đã thu thập thông tin cá nhân từ trẻ em mà không có xác minh sự đồng ý của cha mẹ, chúng tôi sẽ thực hiện các bước để xóa thông tin đó khỏi máy chủ của chúng tôi."
+    },
+    "changes": {
+      "title": "Thay Đổi Đối Với Chính Sách Bảo Mật Này",
+      "p1": "Chúng tôi có thể cập nhật Chính sách Bảo mật của mình theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng Chính sách Bảo mật mới trên trang này và cập nhật ngày \"Cập nhật lần cuối\". Bạn nên xem xét Chính sách Bảo mật này định kỳ để biết bất kỳ thay đổi nào. Các thay đổi đối với Chính sách Bảo mật này có hiệu lực khi chúng được đăng trên trang này."
+    },
+    "contact": {
+      "title": "Liên Hệ Với Chúng Tôi",
+      "p1": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, vui lòng liên hệ với chúng tôi tại privacy@voicegenius.com.",
+      "p2": "VoiceGenius, 123 AI Avenue, San Francisco, CA 94105, Hoa Kỳ"
+    }
   }
 } 
