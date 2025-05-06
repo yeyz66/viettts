@@ -133,10 +133,8 @@
     "a3": "Yes, all audio files generated on our platform can be used for commercial purposes under our paid plans. The Basic plan has some limitations for commercial use.",
     "q4": "How do I download my audio files?",
     "a4": "After generating your audio, simply click the download button to save the file in MP3 format. You can then use it in your projects, presentations, or content.",
-    "q5": "Are there any character limits?",
-    "a5": "Yes, character limits depend on your plan. The Basic plan includes 10,000 characters per month, Professional offers 100,000, and Enterprise provides unlimited usage.",
-    "q6": "How realistic are the voices?",
-    "a6": "Our AI-powered voices are highly realistic with natural intonation, rhythm, and emphasis. Many users report that listeners cannot distinguish our AI voices from human recordings."
+    "q5": "How realistic are the voices?",
+    "a5": "Our AI-powered voices are highly realistic with natural intonation, rhythm, and emphasis. Many users report that listeners cannot distinguish our AI voices from human recordings."
   },
   "converter": {
     "title": "Text to Speech",

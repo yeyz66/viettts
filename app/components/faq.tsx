@@ -8,14 +8,30 @@ import { motion } from 'framer-motion';
 export default function FAQ() {
   const t = useTranslations('faq');
 
-  const faqs = [
-    { question: t('q1'), answer: t('a1') },
-    { question: t('q2'), answer: t('a2') },
-    { question: t('q3'), answer: t('a3') },
-    { question: t('q4'), answer: t('a4') },
-    { question: t('q5'), answer: t('a5') },
-    { question: t('q6'), answer: t('a6') },
-  ];
+  // 获取所有可用的 FAQ 键进行调试
+  const allKeys = [];
+  for (let i = 1; i <= 10; i++) {
+    try {
+      const key = `q${i}`;
+      const value = t(key);
+      if (value !== key) {
+        allKeys.push({ key, value });
+      }
+    } catch {
+      // 如果键不存在，会抛出错误，我们可以忽略它
+    }
+  }
+
+  console.log('Available FAQ keys:', allKeys);
+
+  // 明确只使用 q1 到 q5，即使 q6 存在也不渲染
+  const faqIds = ['q1', 'q2', 'q3', 'q4', 'q5'];
+  const faqs = faqIds.map(id => ({
+    question: t(id),
+    answer: t(id.replace('q', 'a'))
+  }));
+
+  console.log('FAQ items being rendered:', faqs);
 
   return (
     <div id="faq" className="bg-white dark:bg-gray-900">

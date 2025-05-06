@@ -133,10 +133,8 @@
     "a3": "Có, tất cả các tệp âm thanh được tạo trên nền tảng của chúng tôi có thể được sử dụng cho mục đích thương mại theo các gói trả phí của chúng tôi. Gói Cơ bản có một số hạn chế đối với việc sử dụng thương mại.",
     "q4": "Làm thế nào để tải xuống tệp âm thanh của tôi?",
     "a4": "Sau khi tạo âm thanh, chỉ cần nhấp vào nút tải xuống để lưu tệp ở định dạng MP3. Sau đó, bạn có thể sử dụng nó trong các dự án, bài thuyết trình hoặc nội dung của mình.",
-    "q5": "Có giới hạn ký tự không?",
-    "a5": "Có, giới hạn ký tự phụ thuộc vào gói của bạn. Gói Cơ bản bao gồm 10,000 ký tự mỗi tháng, Chuyên nghiệp cung cấp 100,000, và Doanh nghiệp cung cấp sử dụng không giới hạn.",
-    "q6": "Giọng nói có thực tế đến mức nào?",
-    "a6": "Giọng nói AI của chúng tôi rất thực tế với ngữ điệu, nhịp điệu và nhấn mạnh tự nhiên. Nhiều người dùng báo cáo rằng người nghe không thể phân biệt giọng nói AI của chúng tôi với bản ghi âm của con người."
+    "q5": "Giọng nói có thực tế đến mức nào?",
+    "a5": "Giọng nói AI của chúng tôi rất thực tế với ngữ điệu, nhịp điệu và nhấn mạnh tự nhiên. Nhiều người dùng báo cáo rằng người nghe không thể phân biệt giọng nói AI của chúng tôi với bản ghi âm của con người."
   },
   "converter": {
     "title": "Văn bản thành giọng nói",
