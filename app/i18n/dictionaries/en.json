@@ -189,7 +189,7 @@
     "legal": "Legal",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
-    "copyright": "© 2024 VoiceGenius. All rights reserved.",
+    "copyright": "© 2024 VietTts. All rights reserved.",
     "resources": "Resources",
     "documentation": "Documentation",
     "api": "API",
@@ -205,13 +205,13 @@
     "lastUpdated": "Last Updated: July 1, 2024",
     "introduction": {
       "title": "Introduction",
-      "p1": "Welcome to VoiceGenius. These Terms of Service ('Terms') govern your use of our website, products, and services ('Services').",
+      "p1": "Welcome to VietTts. These Terms of Service ('Terms') govern your use of our website, products, and services ('Services').",
       "p2": "By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access the Services.",
       "p3": "We may update these Terms from time to time. Your continued use of the Services following the posting of revised Terms means that you accept and agree to the changes."
     },
     "serviceDescription": {
       "title": "Service Description",
-      "p1": "VoiceGenius provides text-to-speech conversion services allowing you to transform written text into spoken audio files using artificial intelligence technology.",
+      "p1": "VietTts provides text-to-speech conversion services allowing you to transform written text into spoken audio files using artificial intelligence technology.",
       "p2": "Our Services include various voice options, language support, and audio customization features as described on our website."
     },
     "userAccounts": {
@@ -234,13 +234,13 @@
     },
     "intellectualProperty": {
       "title": "Intellectual Property",
-      "p1": "The Service and its original content, features, and functionality are owned by VoiceGenius and are protected by international copyright, trademark, and other intellectual property laws.",
+      "p1": "The Service and its original content, features, and functionality are owned by VietTts and are protected by international copyright, trademark, and other intellectual property laws.",
       "p2": "The audio files generated through our Services may be used by you in accordance with your subscription plan. Basic plans may have limitations on commercial use while paid plans include commercial usage rights."
     },
     "limitations": {
       "title": "Limitation of Liability",
-      "p1": "In no event shall VoiceGenius, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.",
-      "p2": "VoiceGenius shall not be liable for any damage that may occur as a result of your use of our Services, including any errors or omissions in any content, or any loss or damage incurred as a result of the use of any content posted, transmitted, or otherwise made available via the Services."
+      "p1": "In no event shall VietTts, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.",
+      "p2": "VietTts shall not be liable for any damage that may occur as a result of your use of our Services, including any errors or omissions in any content, or any loss or damage incurred as a result of the use of any content posted, transmitted, or otherwise made available via the Services."
     },
     "privacy": {
       "title": "Privacy",
@@ -257,7 +257,7 @@
     },
     "contact": {
       "title": "Contact Us",
-      "p1": "If you have any questions about these Terms, please contact us at support@voicegenius.com."
+      "p1": "If you have any questions about these Terms, please contact us at support@viettts.com."
     }
   },
   "privacyPolicy": {
@@ -265,7 +265,7 @@
     "lastUpdated": "Last Updated: July 1, 2024",
     "introduction": {
       "title": "Introduction",
-      "p1": "VoiceGenius (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our text-to-speech service.",
+      "p1": "VietTts (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our text-to-speech service.",
       "p2": "By accessing or using our service, you consent to the collection, use, disclosure, and storage of your information as described in this Privacy Policy. If you do not agree with our policies and practices, please do not use our services."
     },
     "infoCollected": {
@@ -349,8 +349,8 @@
     },
     "contact": {
       "title": "Contact Us",
-      "p1": "If you have any questions about this Privacy Policy, please contact us at privacy@voicegenius.com.",
-      "p2": "VoiceGenius, 123 AI Avenue, San Francisco, CA 94105, United States"
+      "p1": "If you have any questions about this Privacy Policy, please contact us at privacy@viettts.com.",
+      "p2": "VietTts, 123 AI Avenue, San Francisco, CA 94105, United States"
     }
   }
 } 

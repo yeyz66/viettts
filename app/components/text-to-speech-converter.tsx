@@ -64,7 +64,7 @@ export default function TextToSpeechConverter() {
     
     const a = document.createElement('a');
     a.href = audioUrl;
-    a.download = `voicegenius-${voice}-${Date.now()}.mp3`;
+    a.download = `VietTts-${voice}-${Date.now()}.mp3`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -409,7 +409,7 @@ export default function TextToSpeechConverter() {
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
             <div className="mx-auto text-center text-sm text-gray-500 dark:text-gray-400">
-              VoiceGenius Text-to-Speech
+              VietTts Text-to-Speech
             </div>
           </div>
           

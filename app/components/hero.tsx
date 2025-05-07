@@ -22,7 +22,7 @@ export default function Hero() {
   // Text for text-to-speech heading
   const ttsHeadingText = isVietnamese
     ? 'Chuyển văn bản thành giọng nói dễ dàng'
-    : 'VoiceGenius Text-to-Speech';
+    : 'VietTts Text-to-Speech';
 
   return (
     <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900">

@@ -10,7 +10,7 @@ export default function FAQ() {
 
   // 获取所有可用的 FAQ 键进行调试
   const allKeys = [];
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 5; i++) {
     try {
       const key = `q${i}`;
       const value = t(key);
@@ -22,7 +22,6 @@ export default function FAQ() {
     }
   }
 
-  console.log('Available FAQ keys:', allKeys);
 
   // 明确只使用 q1 到 q5，即使 q6 存在也不渲染
   const faqIds = ['q1', 'q2', 'q3', 'q4', 'q5'];
@@ -31,7 +30,6 @@ export default function FAQ() {
     answer: t(id.replace('q', 'a'))
   }));
 
-  console.log('FAQ items being rendered:', faqs);
 
   return (
     <div id="faq" className="bg-white dark:bg-gray-900">

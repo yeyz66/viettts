@@ -35,8 +35,8 @@ export default function NavBar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href={`/${locale === 'en' ? '' : locale}`} className="-m-1.5 p-1.5">
-            <span className="sr-only">VoiceGenius</span>
-            <div className="text-xl font-bold text-indigo-600 dark:text-indigo-400">VoiceGenius</div>
+            <span className="sr-only">viettts</span>
+            <div className="text-xl font-bold text-indigo-600 dark:text-indigo-400">viettts</div>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -69,8 +69,8 @@ export default function NavBar() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href={`/${locale === 'en' ? '' : locale}`} className="-m-1.5 p-1.5">
-              <span className="sr-only">VoiceGenius</span>
-              <div className="text-xl font-bold text-indigo-600 dark:text-indigo-400">VoiceGenius</div>
+              <span className="sr-only">viettts</span>
+              <div className="text-xl font-bold text-indigo-600 dark:text-indigo-400">viettts</div>
             </Link>
             <button
               type="button"

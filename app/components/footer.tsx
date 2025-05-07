@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-2 xl:gap-8">
           <div className="space-y-8">
             <Link href="#" className="flex items-center">
-              <span className="text-xl font-bold text-indigo-400">VoiceGenius</span>
+              <span className="text-xl font-bold text-indigo-400">VietTts</span>
             </Link>
             <p className="text-sm leading-6 text-gray-300">
               Transform your text into natural-sounding speech with our cutting-edge AI technology.
