@@ -403,11 +403,15 @@
     "buttonText": "Sign in with Google",
     "loadingText": "Processing...",
     "successText": "Login successful, redirecting...",
+    "ariaLabel": "Sign in with your Google account",
     "errors": {
       "defaultError": "Google sign-in failed, please try again later.",
       "popupClosed": "Login popup was closed.",
       "accountExists": "This email is already registered with another method. Please try a different login method.",
-      "popupBlocked": "Popup was blocked. Please allow popups and try again."
+      "popupBlocked": "Popup was blocked. Please allow popups and try again.",
+      "popupCancelled": "Login request was cancelled.",
+      "operationNotAllowed": "Google login is not enabled in Firebase. Please contact the administrator.",
+      "networkFailed": "Network request failed. Please check your internet connection."
     }
   },
   "login": {

@@ -134,3 +134,42 @@ npx ts-node -r dotenv/config app/utils/supabase-setup.ts
 - `tts_history` - 记录TTS使用历史
 
 如果执行脚本时遇到问题，可以通过Supabase界面手动创建这些表。表结构定义位于`app/utils/supabase-setup.ts`文件中。
+
+## Google 登录配置
+
+要启用Google登录功能，需要进行以下配置：
+
+1. 在Firebase控制台中启用Google身份验证服务:
+   - 登录Firebase控制台 (https://console.firebase.google.com/)
+   - 进入你的项目
+   - 导航到"Authentication" > "Sign-in method"
+   - 启用Google登录方式
+   - 配置OAuth重定向域名
+
+2. 确保以下环境变量已经正确设置在`.env.local`文件中:
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   ```
+
+3. 在Google Cloud Platform配置OAuth同意屏幕:
+   - 登录Google Cloud Console (https://console.cloud.google.com/)
+   - 选择与Firebase项目关联的GCP项目
+   - 导航到"API和服务" > "OAuth同意屏幕"
+   - 配置应用名称、用户支持电子邮件和开发者联系信息
+   - 添加必要的范围(如email, profile)
+   - 添加测试用户(如处于测试状态)
+
+4. 创建OAuth客户端ID:
+   - 导航到"API和服务" > "凭据"
+   - 点击"创建凭据" > "OAuth客户端ID"
+   - 选择应用类型为"Web应用"
+   - 添加授权的JavaScript源(如http://localhost:3000和你的生产域名)
+   - 添加授权的重定向URI(必须与Firebase配置中的重定向URI匹配)
+
+登录功能配置完成后，用户将能够使用Google账号进行快速登录。

@@ -403,11 +403,15 @@
     "buttonText": "使用 Google 登录",
     "loadingText": "处理中...",
     "successText": "登录成功，正在跳转...",
+    "ariaLabel": "使用 Google 账号登录",
     "errors": {
       "defaultError": "Google 登录失败，请稍后重试。",
       "popupClosed": "登录弹出窗口已关闭。",
       "accountExists": "该邮箱已通过其他方式注册。请尝试使用其他登录方式。",
-      "popupBlocked": "弹出窗口被阻止。请允许弹出窗口后重试。"
+      "popupBlocked": "弹出窗口被阻止。请允许弹出窗口后重试。",
+      "popupCancelled": "登录请求已取消。",
+      "operationNotAllowed": "Google登录未在Firebase中启用，请联系管理员。",
+      "networkFailed": "网络请求失败，请检查您的网络连接。"
     }
   },
   "login": {

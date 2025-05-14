@@ -5,8 +5,8 @@ import { GoogleAuthProvider, signInWithPopup, AuthError as FirebaseAuthError } f
 import { auth } from '@/app/utils/firebase';
 import { useAuthStore } from '@/app/store/authStore';
 import { useRouter } from 'next/navigation';
-import { syncUserProfileToSupabase } from '@/app/services/userService'; // Import sync function
-import { useTranslations } from 'next-intl'; // 引入 useTranslations
+import { syncUserProfileToSupabase } from '@/app/services/userService';
+import { useTranslations } from 'next-intl';
 
 export function GoogleSignInButton(): React.ReactElement {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -14,64 +14,101 @@ export function GoogleSignInButton(): React.ReactElement {
   const [error, setError] = useState<string | null>(null);
   const setUser = useAuthStore((state) => state.setUser);
   const router = useRouter();
-  const t = useTranslations('googleAuth'); // 使用 googleAuth 命名空间
+  const t = useTranslations('googleAuth');
 
   async function handleGoogleSignIn(): Promise<void> {
     setIsLoading(true);
     setError(null);
     const provider = new GoogleAuthProvider();
-    // You can add custom parameters if needed
-    // provider.addScope('profile');
-    // provider.addScope('email');
+    
+    // 添加更多的Google OAuth scope，如果需要
+    provider.addScope('profile');
+    provider.addScope('email');
+    
+    // 设置自定义参数，例如强制选择账户
+    provider.setCustomParameters({
+      prompt: 'select_account'
+    });
 
     try {
       const result = await signInWithPopup(auth, provider);
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      // const credential = GoogleAuthProvider.credentialFromResult(result);
-      // const token = credential?.accessToken;
-      // The signed-in user info.
+      
+      // 获取Google Access Token，可以用于访问Google API
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential?.accessToken;
+      
+      // 获取已登录的用户信息
       const user = result.user;
 
-      console.log('Google Sign-In successful, user:', user.uid);
+      console.log('Google登录成功，用户ID:', user.uid);
+      
       // 设置成功状态
       setIsSuccess(true);
       
-      // Map the firebase user to our profile structure
+      // 将Firebase用户映射到我们的个人资料结构
       const userProfile = {
         uid: user.uid,
         email: user.email,
         displayName: user.displayName,
         photoURL: user.photoURL,
-        emailVerified: user.emailVerified, // 确保包含 emailVerified 属性
+        emailVerified: user.emailVerified, // Google登录的邮箱默认是已验证的
       };
       
-      // 立即更新状态
+      // 更新用户状态
       setUser(userProfile);
       
-      // 立即导航到首页
+      // 导航到首页
       router.push('/');
       
-      // 后台同步用户数据
+      // 同步用户数据到Supabase
       syncUserProfileToSupabase(user).catch(err => {
-        console.error('同步用户信息失败:', err);
+        console.error('同步用户信息到Supabase失败:', err);
+        // 错误处理可以根据需要扩展，例如通知用户或重试
       });
 
     } catch (err: unknown) {
-      const authError = err as FirebaseAuthError; // Type assertion for better error handling
-      console.error('Google Sign-In Error:', authError);
-      // Handle specific errors
+      const authError = err as FirebaseAuthError;
+      console.error('Google登录错误:', authError);
+      
+      // 处理特定错误
       let errorMessage = t('errors.defaultError');
-      if (authError.code === 'auth/popup-closed-by-user') {
-        errorMessage = t('errors.popupClosed');
-        // Don't necessarily show an error message for this, as it's user action
-        setError(null); // Clear error for this specific case
-        return; // Exit without setting error message
-      } else if (authError.code === 'auth/account-exists-with-different-credential') {
-        errorMessage = t('errors.accountExists');
-        // TODO: Implement account linking flow if desired
-      } else if (authError.code === 'auth/popup-blocked') {
+      
+      switch(authError.code) {
+        case 'auth/popup-closed-by-user':
+          // 用户关闭弹窗，这不是真正的错误
+          setError(null);
+          console.log('用户关闭了登录弹窗');
+          return;
+          
+        case 'auth/account-exists-with-different-credential':
+          errorMessage = t('errors.accountExists');
+          console.error('此邮箱已经使用其他登录方式注册');
+          break;
+          
+        case 'auth/popup-blocked':
           errorMessage = t('errors.popupBlocked');
+          console.error('登录弹窗被浏览器阻止');
+          break;
+          
+        case 'auth/cancelled-popup-request':
+          errorMessage = t('errors.popupCancelled');
+          console.error('登录请求被取消');
+          break;
+          
+        case 'auth/operation-not-allowed':
+          errorMessage = t('errors.operationNotAllowed');
+          console.error('Google登录未在Firebase控制台中启用');
+          break;
+          
+        case 'auth/network-request-failed':
+          errorMessage = t('errors.networkFailed');
+          console.error('网络请求失败，请检查网络连接');
+          break;
+          
+        default:
+          console.error(`未知错误: ${authError.code}`, authError.message);
       }
+      
       setError(errorMessage);
     } finally {
       setIsLoading(false);
@@ -84,6 +121,7 @@ export function GoogleSignInButton(): React.ReactElement {
         onClick={handleGoogleSignIn}
         disabled={isLoading || isSuccess}
         className="w-full flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        aria-label={t('ariaLabel')}
       >
         {isLoading ? (
           <span className="flex items-center">
@@ -113,7 +151,7 @@ export function GoogleSignInButton(): React.ReactElement {
         )}
       </button>
       {error && (
-        <p className="text-red-600 text-sm text-center mt-2">
+        <p className="text-red-600 text-sm text-center mt-2" role="alert">
           {error}
         </p>
       )}

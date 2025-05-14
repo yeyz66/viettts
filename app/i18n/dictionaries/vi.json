@@ -402,11 +402,15 @@
     "buttonText": "Đăng nhập bằng Google",
     "loadingText": "Đang xử lý...",
     "successText": "Đăng nhập thành công, đang chuyển hướng...",
+    "ariaLabel": "Đăng nhập bằng tài khoản Google của bạn",
     "errors": {
       "defaultError": "Đăng nhập Google thất bại, vui lòng thử lại sau.",
       "popupClosed": "Cửa sổ đăng nhập đã bị đóng.",
       "accountExists": "Email này đã được đăng ký bằng phương thức khác. Vui lòng thử phương thức đăng nhập khác.",
-      "popupBlocked": "Cửa sổ popup bị chặn. Vui lòng cho phép popup và thử lại."
+      "popupBlocked": "Cửa sổ popup bị chặn. Vui lòng cho phép popup và thử lại.",
+      "popupCancelled": "Yêu cầu đăng nhập đã bị hủy.",
+      "operationNotAllowed": "Đăng nhập Google không được kích hoạt trong Firebase. Vui lòng liên hệ quản trị viên.",
+      "networkFailed": "Yêu cầu mạng thất bại. Vui lòng kiểm tra kết nối internet của bạn."
     }
   },
   "login": {
