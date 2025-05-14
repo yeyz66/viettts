@@ -11,8 +11,8 @@ export default function Hero() {
 
   // Determine text and links based on locale
   const isVietnamese = locale === 'vi';
-  const textToSpeechLink = `/${locale === 'en' ? '' : locale}/text-to-speech`;
-  const howItWorksLink = `/${locale === 'en' ? '' : locale}/how-it-works`;
+  const textToSpeechLink = `${locale === 'en' ? '/en' : `/${locale}`}/text-to-speech`;
+  const howItWorksLink = `${locale === 'en' ? '/en' : `/${locale}`}/how-it-works`;
   
   // Text for CTA button
   const ctaButtonText = isVietnamese 

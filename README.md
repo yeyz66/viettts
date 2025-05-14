@@ -102,3 +102,35 @@ The user interface is available in:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 数据库初始化
+
+要设置必要的Supabase数据库表，请按照以下步骤操作：
+
+1. 确保你已经创建了一个Supabase项目，并获取了URL和anon key。
+
+2. 在Supabase SQL编辑器中添加`exec_sql`函数：
+
+```sql
+CREATE OR REPLACE FUNCTION exec_sql(query TEXT)
+RETURNS VOID AS $$
+BEGIN
+  EXECUTE query;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+```
+
+3. 然后执行初始化脚本：
+
+```bash
+npm install -D typescript ts-node dotenv
+npx ts-node -r dotenv/config app/utils/supabase-setup.ts
+```
+
+这个脚本将创建以下表：
+- `tts_users` - 存储用户信息
+- `tts_requests` - 跟踪TTS请求队列
+- `tts_usage_counts` - 用于速率限制
+- `tts_history` - 记录TTS使用历史
+
+如果执行脚本时遇到问题，可以通过Supabase界面手动创建这些表。表结构定义位于`app/utils/supabase-setup.ts`文件中。

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import I18nProvider from "./i18n/intl-provider";
@@ -7,14 +7,10 @@ import enDict from "./i18n/dictionaries/en.json";
 import zhDict from "./i18n/dictionaries/zh.json";
 import viDict from "./i18n/dictionaries/vi.json";
 import GoogleAnalytics from "./components/google-analytics";
+import { AuthListener } from '@/app/components/auth/AuthListener';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -57,9 +53,10 @@ export default function RootLayout({
     <html lang={locale} className="scroll-smooth">
       <GoogleAnalytics />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} antialiased`}
       >
         <I18nProvider messages={dictionaries}>
+          <AuthListener />
           {children}
           <Toaster position="top-center" />
         </I18nProvider>

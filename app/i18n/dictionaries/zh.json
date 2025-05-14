@@ -5,7 +5,9 @@
     "pricing": "价格",
     "howItWorks": "使用方法",
     "textToSpeech": "文字转语音",
-    "faq": "常见问题"
+    "faq": "常见问题",
+    "login": "登录",
+    "logout": "退出"
   },
   "hero": {
     "title": "几秒钟内将文字转换为自然语音",
@@ -175,9 +177,21 @@
     "processing": "处理中...",
     "characterCount": "字符数：{count}/{charLimit}",
     "errorMessages": {
-      "emptyText": "请输入要转换的文本",
-      "tooLongText": "文本超过{charLimit}个字符的最大长度",
-      "failedGeneration": "生成语音失败。请重试。"
+      "emptyText": "请输入文本后再生成语音",
+      "tooLongText": "文本超过最大长度限制（{charLimit}字符）",
+      "failedGeneration": "生成语音失败，请重试",
+      "emailNotVerified": "请先验证您的邮箱后再使用文字转语音功能",
+      "loginRequired": "请先登录后再使用文字转语音功能"
+    },
+    "emailVerification": {
+      "required": "需要验证邮箱",
+      "message": "您需要验证邮箱才能使用文字转语音功能。",
+      "goToVerifyPage": "前往验证页面"
+    },
+    "loginRequired": {
+      "title": "需要登录",
+      "message": "您需要登录才能使用文字转语音功能。",
+      "loginButton": "前往登录"
     }
   },
   "footer": {
@@ -352,5 +366,54 @@
       "p1": "如果您对本隐私政策有任何疑问，请通过privacy@voicegenius.com联系我们。",
       "p2": "音声天才，美国加利福尼亚州旧金山人工智能大道123号，邮编94105"
     }
+  },
+  "logout_confirmation": {
+    "title": "确认退出",
+    "description": "确定要退出登录吗？",
+    "confirm": "退出登录",
+    "cancel": "取消"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "welcome": "欢迎回来, {email}!",
+    "protectedArea": "这是受保护的区域。",
+    "emailStatus": "邮箱状态:",
+    "verified": "已验证",
+    "notVerified": "未验证",
+    "logoutButton": "退出登录",
+    "guestUser": "用户"
+  },
+  "loginForm": {
+    "email": "邮箱",
+    "password": "密码",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••",
+    "loginButton": "登录",
+    "loadingText": "登录中...",
+    "successText": "登录成功，正在跳转...",
+    "errors": {
+      "emptyFields": "请输入邮箱和密码。",
+      "invalidCredentials": "邮箱或密码错误。",
+      "invalidEmail": "邮箱格式无效。",
+      "tooManyRequests": "尝试次数过多，请稍后重试。",
+      "defaultError": "登录失败，请稍后重试。"
+    }
+  },
+  "googleAuth": {
+    "buttonText": "使用 Google 登录",
+    "loadingText": "处理中...",
+    "successText": "登录成功，正在跳转...",
+    "errors": {
+      "defaultError": "Google 登录失败，请稍后重试。",
+      "popupClosed": "登录弹出窗口已关闭。",
+      "accountExists": "该邮箱已通过其他方式注册。请尝试使用其他登录方式。",
+      "popupBlocked": "弹出窗口被阻止。请允许弹出窗口后重试。"
+    }
+  },
+  "login": {
+    "redirectingMessage": "登录成功，正在进入...",
+    "orSeparator": "或者",
+    "noAccount": "还没有账户？点击注册",
+    "forgotPassword": "忘记密码？"
   }
 } 

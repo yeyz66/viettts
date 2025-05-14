@@ -12,6 +12,35 @@ export async function setupDatabase() {
   console.log('Setting up Supabase database for TTS rate limiting and queue...');
   
   try {
+    // Create tts_users table
+    const { error: createUsersTableError } = await supabase.rpc('exec_sql', {
+      query: `
+        CREATE TABLE IF NOT EXISTS tts_users (
+          id SERIAL PRIMARY KEY,
+          user_id TEXT UNIQUE NOT NULL, -- Firebase UID
+          email TEXT,
+          display_name TEXT,
+          photo_url TEXT,
+          email_verified BOOLEAN DEFAULT FALSE,
+          created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+          updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+        );
+        
+        -- Add index on email for faster queries
+        CREATE INDEX IF NOT EXISTS tts_users_email_idx ON tts_users(email);
+        
+        -- Add index on user_id for faster queries
+        CREATE INDEX IF NOT EXISTS tts_users_user_id_idx ON tts_users(user_id);
+      `
+    });
+    
+    if (createUsersTableError) {
+      console.error('Error creating tts_users table:', createUsersTableError);
+      throw createUsersTableError;
+    }
+    
+    console.log('✅ tts_users table created successfully');
+    
     // Create tts_requests table
     const { error: createRequestsTableError } = await supabase.rpc('exec_sql', {
       query: `

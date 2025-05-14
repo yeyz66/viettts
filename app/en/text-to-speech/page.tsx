@@ -1,8 +1,6 @@
-import NavBar from '../../components/navbar';
-import Footer from '../../components/footer';
-import TextToSpeechConverter from '../../components/text-to-speech-converter';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import EnglishTextToSpeechPage from './client-page';
 
 export const metadata: Metadata = {
   title: 'Text to Speech | Convert Text to Voice Instantly',
@@ -19,15 +17,10 @@ export const metadata: Metadata = {
   }
 };
 
-export default function EnglishTextToSpeechPage() {
+export default function Page() {
   return (
     <>
-      <NavBar />
-      <main>
-        <TextToSpeechConverter />
-      </main>
-      <Footer />
-      
+      <EnglishTextToSpeechPage />
       <Script id="schema-structured-data" type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",

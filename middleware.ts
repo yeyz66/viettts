@@ -1,19 +1,23 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import createMiddleware from 'next-intl/middleware';
+import { locales, defaultLocale, localePrefix } from './app/i18n/config'; // Adjust path if needed
 
-export function middleware(request: NextRequest) {
-  // For API routes that require OpenAI
-  if (request.nextUrl.pathname.startsWith('/api/text-to-speech')) {
-    // Check if OpenAI API key is set
-    if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json(
-        {
-          error: 'OpenAI API key is not configured. Please add your API key to .env.local',
-        },
-        { status: 500 }
-      );
-    }
-  }
+// Define pathnames, even if they are the same across locales for now
+const pathnames = {
+  // The path for the login page
+  '/login': '/login',
+  // Add other paths here if they differ across locales or need explicit mapping
+};
 
-  return NextResponse.next();
-} 
+// Base next-intl middleware for handling locales
+export default createMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix, // Use the localePrefix configuration
+  pathnames,    // Add the pathnames configuration
+  // localeDetection: false, // Optional: Disable auto-detection if you only want path-based locales
+});
+
+export const config = {
+  // Simplest matcher: Match all paths except for static assets and API routes.
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).+)']
+}; 

@@ -5,7 +5,9 @@
     "pricing": "Pricing",
     "howItWorks": "How It Works",
     "textToSpeech": "Text to Speech",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "login": "Login",
+    "logout": "Logout"
   },
   "hero": {
     "title": "Transform Text to Natural Speech in Seconds",
@@ -177,7 +179,19 @@
     "errorMessages": {
       "emptyText": "Please enter some text to convert",
       "tooLongText": "Text exceeds maximum length of {charLimit} characters",
-      "failedGeneration": "Failed to generate speech. Please try again."
+      "failedGeneration": "Failed to generate speech. Please try again.",
+      "emailNotVerified": "Please verify your email before using the text-to-speech feature",
+      "loginRequired": "Please login before using the text-to-speech feature"
+    },
+    "emailVerification": {
+      "required": "Email Verification Required",
+      "message": "You need to verify your email to use the text-to-speech feature.",
+      "goToVerifyPage": "Go to Verification Page"
+    },
+    "loginRequired": {
+      "title": "Login Required",
+      "message": "You need to login to use the text-to-speech feature.",
+      "loginButton": "Go to Login"
     }
   },
   "footer": {
@@ -352,5 +366,54 @@
       "p1": "If you have any questions about this Privacy Policy, please contact us at privacy@viettts.com.",
       "p2": "VietTts, 123 AI Avenue, San Francisco, CA 94105, United States"
     }
+  },
+  "logout_confirmation": {
+    "title": "Confirm Logout",
+    "description": "Are you sure you want to log out?",
+    "confirm": "Logout",
+    "cancel": "Cancel"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {email}!",
+    "protectedArea": "This is a protected area.",
+    "emailStatus": "Email status:",
+    "verified": "Verified",
+    "notVerified": "Not verified",
+    "logoutButton": "Logout",
+    "guestUser": "User"
+  },
+  "loginForm": {
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••",
+    "loginButton": "Login",
+    "loadingText": "Logging in...",
+    "successText": "Login successful, redirecting...",
+    "errors": {
+      "emptyFields": "Please enter your email and password.",
+      "invalidCredentials": "Email or password is incorrect.",
+      "invalidEmail": "Invalid email format.",
+      "tooManyRequests": "Too many attempts, please try again later.",
+      "defaultError": "Login failed, please try again later."
+    }
+  },
+  "googleAuth": {
+    "buttonText": "Sign in with Google",
+    "loadingText": "Processing...",
+    "successText": "Login successful, redirecting...",
+    "errors": {
+      "defaultError": "Google sign-in failed, please try again later.",
+      "popupClosed": "Login popup was closed.",
+      "accountExists": "This email is already registered with another method. Please try a different login method.",
+      "popupBlocked": "Popup was blocked. Please allow popups and try again."
+    }
+  },
+  "login": {
+    "redirectingMessage": "Login successful, redirecting...",
+    "orSeparator": "Or",
+    "noAccount": "Don't have an account? Sign up",
+    "forgotPassword": "Forgot password?"
   }
 } 

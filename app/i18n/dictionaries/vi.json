@@ -2,10 +2,12 @@
   "nav": {
     "home": "Trang chủ",
     "features": "Tính năng",
-    "pricing": "Giá cả",
+    "pricing": "Bảng giá",
     "howItWorks": "Cách hoạt động",
     "textToSpeech": "Văn bản thành giọng nói",
-    "faq": "Câu hỏi thường gặp"
+    "faq": "Câu hỏi thường gặp",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất"
   },
   "hero": {
     "title": "Chuyển văn bản thành giọng nói tự nhiên trong vài giây",
@@ -176,7 +178,19 @@
     "errorMessages": {
       "emptyText": "Vui lòng nhập văn bản để chuyển đổi",
       "tooLongText": "Văn bản vượt quá độ dài tối đa {charLimit} ký tự",
-      "failedGeneration": "Không thể tạo giọng nói. Vui lòng thử lại."
+      "failedGeneration": "Không thể tạo giọng nói. Vui lòng thử lại.",
+      "emailNotVerified": "Vui lòng xác minh email của bạn trước khi sử dụng tính năng chuyển văn bản thành giọng nói",
+      "loginRequired": "Vui lòng đăng nhập trước khi sử dụng tính năng chuyển văn bản thành giọng nói"
+    },
+    "emailVerification": {
+      "required": "Yêu Cầu Xác Minh Email",
+      "message": "Bạn cần xác minh email để sử dụng tính năng chuyển văn bản thành giọng nói.",
+      "goToVerifyPage": "Đến Trang Xác Minh"
+    },
+    "loginRequired": {
+      "title": "Yêu Cầu Đăng Nhập",
+      "message": "Bạn cần đăng nhập để sử dụng tính năng chuyển văn bản thành giọng nói.",
+      "loginButton": "Đến Trang Đăng Nhập"
     }
   },
   "footer": {
@@ -351,5 +365,54 @@
       "p1": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, vui lòng liên hệ với chúng tôi tại privacy@voicegenius.com.",
       "p2": "VietTts, 123 AI Avenue, San Francisco, CA 94105, Hoa Kỳ"
     }
+  },
+  "logout_confirmation": {
+    "title": "Xác nhận đăng xuất",
+    "description": "Bạn có chắc chắn muốn đăng xuất?",
+    "confirm": "Đăng xuất",
+    "cancel": "Hủy bỏ"
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "welcome": "Chào mừng trở lại, {email}!",
+    "protectedArea": "Đây là khu vực được bảo vệ.",
+    "emailStatus": "Trạng thái email:",
+    "verified": "Đã xác minh",
+    "notVerified": "Chưa xác minh",
+    "logoutButton": "Đăng xuất",
+    "guestUser": "Người dùng"
+  },
+  "loginForm": {
+    "email": "Email",
+    "password": "Mật khẩu",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••",
+    "loginButton": "Đăng nhập",
+    "loadingText": "Đang đăng nhập...",
+    "successText": "Đăng nhập thành công, đang chuyển hướng...",
+    "errors": {
+      "emptyFields": "Vui lòng nhập email và mật khẩu của bạn.",
+      "invalidCredentials": "Email hoặc mật khẩu không chính xác.",
+      "invalidEmail": "Định dạng email không hợp lệ.",
+      "tooManyRequests": "Quá nhiều lần thử, vui lòng thử lại sau.",
+      "defaultError": "Đăng nhập thất bại, vui lòng thử lại sau."
+    }
+  },
+  "googleAuth": {
+    "buttonText": "Đăng nhập bằng Google",
+    "loadingText": "Đang xử lý...",
+    "successText": "Đăng nhập thành công, đang chuyển hướng...",
+    "errors": {
+      "defaultError": "Đăng nhập Google thất bại, vui lòng thử lại sau.",
+      "popupClosed": "Cửa sổ đăng nhập đã bị đóng.",
+      "accountExists": "Email này đã được đăng ký bằng phương thức khác. Vui lòng thử phương thức đăng nhập khác.",
+      "popupBlocked": "Cửa sổ popup bị chặn. Vui lòng cho phép popup và thử lại."
+    }
+  },
+  "login": {
+    "redirectingMessage": "Đăng nhập thành công, đang chuyển hướng...",
+    "orSeparator": "Hoặc",
+    "noAccount": "Chưa có tài khoản? Đăng ký",
+    "forgotPassword": "Quên mật khẩu?"
   }
 } 

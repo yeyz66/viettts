@@ -1,7 +1,7 @@
-import NavBar from '../components/navbar';
-import Footer from '../components/footer';
-import TextToSpeechConverter from '../components/text-to-speech-converter';
 import type { Metadata } from 'next';
+import TextToSpeechPage from './client-page';
+import TtsEmailVerificationCheck from '../components/auth/TtsEmailVerificationCheck';
+import TtsAuthCheck from '../components/auth/TtsAuthCheck';
 
 export const metadata: Metadata = {
   title: 'Text to Speech | Convert Text to Voice',
@@ -17,14 +17,12 @@ export const metadata: Metadata = {
   }
 };
 
-export default function TextToSpeechPage() {
+export default function TextToSpeechIndexPage() {
   return (
     <>
-      <NavBar />
-      <main>
-        <TextToSpeechConverter />
-      </main>
-      <Footer />
+      <TtsAuthCheck />
+      <TtsEmailVerificationCheck />
+      <TextToSpeechPage />
     </>
   );
 } 

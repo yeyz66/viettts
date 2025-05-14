@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import rateLimiter from '../../utils/rate-limiter';
 import { recordTTSUsage, getUserIdFromRequest } from '../../utils/tts-history';
+import { createClient } from '@supabase/supabase-js';
+
+// 初始化Supabase客户端
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -49,6 +54,36 @@ async function processTTSRequest(payload: { text: string; voice: string }): Prom
 // Set the process method in rate limiter
 rateLimiter.processRequestImpl = processTTSRequest;
 
+// 检查用户邮箱是否已验证
+async function checkEmailVerified(userId: string | null): Promise<boolean> {
+  // 如果没有用户ID，视为未登录或匿名用户
+  if (!userId) {
+    return false;
+  }
+
+  try {
+    // 创建Supabase客户端
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    
+    // 查询用户验证状态
+    const { data, error } = await supabase
+      .from('tts_users')
+      .select('email_verified')
+      .eq('user_id', userId)
+      .single();
+    
+    if (error || !data) {
+      console.error('Error checking email verification status:', error);
+      return false;
+    }
+    
+    return !!data.email_verified;
+  } catch (error) {
+    console.error('Exception checking email verification:', error);
+    return false;
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Parse request body
@@ -75,6 +110,20 @@ export async function POST(request: NextRequest) {
     
     // Get user ID if they are logged in
     const userId = await getUserIdFromRequest();
+    
+    // 检查用户邮箱是否已验证
+    const isEmailVerified = await checkEmailVerified(userId);
+    
+    // 如果用户已登录但邮箱未验证，拒绝请求
+    if (userId && !isEmailVerified) {
+      return NextResponse.json(
+        { 
+          error: '请先验证您的邮箱后再使用文字转语音功能', 
+          code: 'email_not_verified' 
+        },
+        { status: 403 }
+      );
+    }
     
     // Record TTS usage without waiting for completion
     recordTTSUsage({

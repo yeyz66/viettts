@@ -1,6 +1,8 @@
 import NavBar from '../../components/navbar';
 import Footer from '../../components/footer';
 import TextToSpeechConverter from '../../components/text-to-speech-converter';
+import TtsAuthCheck from '../../components/auth/TtsAuthCheck';
+import TtsEmailVerificationCheck from '../../components/auth/TtsEmailVerificationCheck';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -24,6 +26,8 @@ export default function VietnameseTextToSpeechPage() {
     <>
       <NavBar />
       <main>
+        <TtsAuthCheck />
+        <TtsEmailVerificationCheck />
         <TextToSpeechConverter />
       </main>
       <Footer />
