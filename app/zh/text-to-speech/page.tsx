@@ -1,8 +1,7 @@
 import NavBar from '../../components/navbar';
 import Footer from '../../components/footer';
 import TextToSpeechConverter from '../../components/text-to-speech-converter';
-import TtsEmailVerificationCheck from '../../components/auth/TtsEmailVerificationCheck';
-import TtsAuthCheck from '../../components/auth/TtsAuthCheck';
+import { AuthGuard } from '../../components/auth/AuthGuard';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -26,9 +25,9 @@ export default function ChineseTextToSpeechPage() {
     <>
       <NavBar />
       <main>
-        <TtsAuthCheck />
-        <TtsEmailVerificationCheck />
-        <TextToSpeechConverter />
+        <AuthGuard requireEmailVerification={true}>
+          <TextToSpeechConverter />
+        </AuthGuard>
       </main>
       <Footer />
       
