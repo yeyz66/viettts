@@ -12,7 +12,7 @@
  * 如何运行: npx ts-node -r dotenv/config app/utils/migrate-tts-users-table.ts
  */
 
-import supabase from './supabase';
+import supabase from './supabaseClient';
 
 async function migrateUserTable() {
   console.log('开始迁移tts_users表...');

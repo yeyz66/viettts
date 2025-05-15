@@ -1,5 +1,5 @@
 // Text-to-speech rate limiter for authenticated users
-import supabase from './supabase';
+import supabase from './supabaseClient';
 import OpenAI from 'openai';
 
 // Initialize OpenAI client

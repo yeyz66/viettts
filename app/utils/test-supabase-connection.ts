@@ -3,7 +3,7 @@
  * 运行方式: npx ts-node -r dotenv/config app/utils/test-supabase-connection.ts
  */
 
-import supabaseA from './supabase';
+import supabaseA from './supabaseClient';
 import supabaseB from './supabaseClient';
 
 // 定义测试用户（不包含id，因为id是自增主键）

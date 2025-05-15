@@ -1,4 +1,4 @@
-import supabase from './supabase';
+import supabase from './supabaseClient';
 
 /**
  * Sets up the Supabase database with the necessary tables and functions
