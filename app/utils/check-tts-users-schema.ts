@@ -31,7 +31,11 @@ async function checkTtsUsersSchema() {
     console.table(data);
     
     // 特别检查 user_id 列
-    const userIdColumn = data.find((column: any) => column.column_name === 'user_id');
+    interface ColumnInfo {
+      column_name: string;
+      data_type: string;
+    }
+    const userIdColumn = data.find((column: ColumnInfo) => column.column_name === 'user_id');
     
     if (userIdColumn) {
       console.log(`user_id 列的数据类型: ${userIdColumn.data_type}`);

@@ -33,10 +33,6 @@ export function GoogleSignInButton(): React.ReactElement {
     try {
       const result = await signInWithPopup(auth, provider);
       
-      // 获取Google Access Token，可以用于访问Google API
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential?.accessToken;
-      
       // 获取已登录的用户信息
       const user = result.user;
 
