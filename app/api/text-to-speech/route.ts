@@ -125,64 +125,25 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Check if global rate limit has been exceeded
+    // 检查是否达到速率限制
     const isLimitExceeded = await rateLimiter.hasExceededRateLimit();
     
     if (isLimitExceeded) {
-      // Check if user already has a request in the queue
-      const queuePosition = await rateLimiter.getPositionInQueue(clientIP);
-      
-      if (queuePosition > 0) {
-        // User already has a request in the queue
-        return NextResponse.json(
-          { 
-            queued: true, 
-            position: queuePosition,
-            message: `The global rate limit has been reached. Your request is queued (position: ${queuePosition}).`
-          },
-          { status: 429 }
-        );
-      }
-      
-      // Add to queue and start asynchronous processing
-      try {
-        // Enqueue the request and wait for it to be processed
-        const buffer = await rateLimiter.enqueueRequest(clientIP, { text, voice });
-        
-        // 在成功处理队列请求后记录TTS使用情况
-        recordTTSUsage({
-          text,
-          voice,
-          clientIP,
-          userId
-        }).catch(error => {
-          console.error('Failed to record TTS usage after queue processing:', error);
-        });
-        
-        // When the queue processes this request, return the result
-        return new NextResponse(buffer, {
-          headers: {
-            'Content-Type': 'audio/mpeg',
-            'Content-Length': buffer.byteLength.toString(),
-          },
-        });
-      } catch (error) {
-        console.error('Error processing queued TTS request:', error);
-        const errorMessage = error instanceof Error ? error.message : 'Failed to process queued request';
-        
-        return NextResponse.json(
-          { error: errorMessage },
-          { status: 500 }
-        );
-      }
+      return NextResponse.json(
+        { 
+          error: '已达到每分钟请求数限制，请稍后再试',
+          code: 'rate_limit_exceeded'
+        },
+        { status: 429 }
+      );
     }
     
-    // Process the request directly as the global limit hasn't been exceeded
+    // 如果未达到限制，直接处理请求
     try {
-      // Record this request for rate limiting
+      // 记录此请求用于速率限制
       await rateLimiter.recordRequest();
       
-      // Process TTS request directly
+      // 直接处理TTS请求
       const buffer = await processTTSRequest({ text, voice });
       
       // 在成功生成语音后记录TTS使用情况

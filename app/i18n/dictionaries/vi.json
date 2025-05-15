@@ -145,20 +145,6 @@
     "voiceLabel": "Chọn giọng nói",
     "instructions": "Hướng dẫn: Nhập văn bản của bạn vào ô phía trên, chọn giọng nói từ menu thả xuống, sau đó nhấp vào 'Tạo giọng nói'. Sau khi tạo, bạn có thể nghe âm thanh và tải xuống dưới dạng tệp MP3.",
     "rateLimitNotice": "Lưu ý: Người dùng miễn phí bị giới hạn {limit} thao tác chuyển văn bản thành giọng nói mỗi phút trên toàn cầu.",
-    "queueNotice": "Khi đạt đến giới hạn, yêu cầu của bạn sẽ được đưa vào hàng đợi và xử lý theo thứ tự.",
-    "rateLimitActive": "Đã Kích Hoạt Giới Hạn Tốc Độ",
-    "maxRequestsMessage": "Hệ thống hiện đang xử lý số lượng yêu cầu tối đa ({limit} mỗi phút).",
-    "queueAddedMessage": "Yêu cầu của bạn sẽ được thêm vào hàng đợi.",
-    "currentQueue": "Hàng đợi hiện tại:",
-    "lastUpdated": "Cập nhật lần cuối {time}",
-    "user": "người dùng",
-    "users": "người dùng",
-    "requestQueued": "Yêu Cầu Đã Xếp Hàng",
-    "queuedMessage": "Yêu cầu của bạn đang trong hàng đợi do nhu cầu cao. Nó sẽ được xử lý tự động khi đến lượt bạn.",
-    "yourPosition": "Vị trí của bạn:",
-    "resetQueueStatus": "Đặt lại trạng thái hàng đợi",
-    "of": "trên",
-    "systemStatus": "Trạng Thái Hệ Thống",
     "voices": {
       "alloy": "Alloy (Nữ, Thân thiện)",
       "echo": "Echo (Nam, Trầm)",
@@ -180,7 +166,8 @@
       "tooLongText": "Văn bản vượt quá độ dài tối đa {charLimit} ký tự",
       "failedGeneration": "Không thể tạo giọng nói. Vui lòng thử lại.",
       "emailNotVerified": "Vui lòng xác minh email của bạn trước khi sử dụng tính năng chuyển văn bản thành giọng nói",
-      "loginRequired": "Vui lòng đăng nhập trước khi sử dụng tính năng chuyển văn bản thành giọng nói"
+      "loginRequired": "Vui lòng đăng nhập trước khi sử dụng tính năng chuyển văn bản thành giọng nói",
+      "rateLimitExceeded": "Đã vượt quá giới hạn tốc độ. Vui lòng thử lại sau."
     },
     "emailVerification": {
       "required": "Yêu Cầu Xác Minh Email",

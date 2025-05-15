@@ -145,21 +145,6 @@
     "voiceLabel": "Select a voice",
     "instructions": "Instructions: Enter your text in the box above, select a voice from the dropdown menu, then click 'Generate Speech'. Once generated, you can listen to the audio and download it as an MP3 file.",
     "rateLimitNotice": "Note: Free users are limited to {limit} text-to-speech operations per minute globally.",
-    "queueNotice": "When the limit is reached, your request will be placed in a queue and processed in order.",
-    "rateLimitActive": "Rate Limit Active",
-    "maxRequestsMessage": "The system is currently processing the maximum number of requests ({limit} per minute).",
-    "queueAddedMessage": "Your request will be added to the queue.",
-    "currentQueue": "Current Queue:",
-    "lastUpdated": "Last updated {time}",
-    "user": "user",
-    "users": "users",
-    "requestQueued": "Request Queued",
-    "queuedMessage": "Your request is in queue due to high demand. It will be processed automatically when your turn comes.",
-    "yourPosition": "Your Position:",
-    "resetQueueStatus": "Reset Queue Status",
-    "of": "of",
-    "systemStatus": "System Status",
-    "queuedStatus": "Queued ({position} of {total})",
     "voices": {
       "alloy": "Alloy (Female, Casual)",
       "echo": "Echo (Male, Deep)",
@@ -181,7 +166,8 @@
       "tooLongText": "Text exceeds maximum length of {charLimit} characters",
       "failedGeneration": "Failed to generate speech. Please try again.",
       "emailNotVerified": "Please verify your email before using the text-to-speech feature",
-      "loginRequired": "Please login before using the text-to-speech feature"
+      "loginRequired": "Please login before using the text-to-speech feature",
+      "rateLimitExceeded": "Rate limit exceeded. Please try again later."
     },
     "emailVerification": {
       "required": "Email Verification Required",

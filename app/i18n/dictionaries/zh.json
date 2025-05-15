@@ -145,21 +145,6 @@
     "voiceLabel": "选择声音",
     "instructions": "使用说明：在上方文本框中输入您的文字，从下拉菜单中选择声音，然后点击\"生成语音\"。生成后，您可以收听音频并将其下载为MP3文件。",
     "rateLimitNotice": "注意：免费用户全局每分钟限制使用{limit}次文字转语音操作。",
-    "queueNotice": "当达到限制时，您的请求将被加入队列并按顺序处理。",
-    "rateLimitActive": "速率限制已激活",
-    "maxRequestsMessage": "系统当前正在处理最大请求数（每分钟{limit}个）。",
-    "queueAddedMessage": "您的请求将被添加到队列中。",
-    "currentQueue": "当前队列：",
-    "lastUpdated": "最后更新于{time}",
-    "user": "用户",
-    "users": "用户",
-    "requestQueued": "请求已排队",
-    "queuedMessage": "由于需求量大，您的请求已加入队列。当轮到您时，系统会自动处理。",
-    "yourPosition": "您的位置：",
-    "resetQueueStatus": "重置队列状态",
-    "of": "共",
-    "systemStatus": "系统状态",
-    "queuedStatus": "排队中（{position}/{total}）",
     "voices": {
       "alloy": "艾洛伊（女声，休闲）",
       "echo": "艾柯（男声，深沉）",
@@ -181,7 +166,8 @@
       "tooLongText": "文本超过最大长度限制（{charLimit}字符）",
       "failedGeneration": "生成语音失败，请重试",
       "emailNotVerified": "请先验证您的邮箱后再使用文字转语音功能",
-      "loginRequired": "请先登录后再使用文字转语音功能"
+      "loginRequired": "请先登录后再使用文字转语音功能",
+      "rateLimitExceeded": "已达到使用频率限制，请稍后再试"
     },
     "emailVerification": {
       "required": "需要验证邮箱",
