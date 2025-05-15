@@ -144,7 +144,7 @@
     "inputPlaceholder": "Nhập văn bản của bạn tại đây (tối đa {charLimit} ký tự)",
     "voiceLabel": "Chọn giọng nói",
     "instructions": "Hướng dẫn: Nhập văn bản của bạn vào ô phía trên, chọn giọng nói từ menu thả xuống, sau đó nhấp vào 'Tạo giọng nói'. Sau khi tạo, bạn có thể nghe âm thanh và tải xuống dưới dạng tệp MP3.",
-    "rateLimitNotice": "Lưu ý: Người dùng miễn phí bị giới hạn {limit} thao tác chuyển văn bản thành giọng nói mỗi phút trên toàn cầu.",
+    "rateLimitNotice": "Lưu ý: Người dùng miễn phí bị giới hạn {limit} thao tác chuyển văn bản thành giọng nói mỗi ngày trên toàn cầu.",
     "voices": {
       "alloy": "Alloy (Nữ, Thân thiện)",
       "echo": "Echo (Nam, Trầm)",
@@ -167,7 +167,7 @@
       "failedGeneration": "Không thể tạo giọng nói. Vui lòng thử lại.",
       "emailNotVerified": "Vui lòng xác minh email của bạn trước khi sử dụng tính năng chuyển văn bản thành giọng nói",
       "loginRequired": "Vui lòng đăng nhập trước khi sử dụng tính năng chuyển văn bản thành giọng nói",
-      "rateLimitExceeded": "Đã vượt quá giới hạn tốc độ. Vui lòng thử lại sau."
+      "rateLimitExceeded": "Đã vượt quá giới hạn số lần sử dụng hàng ngày. Vui lòng thử lại vào ngày mai."
     },
     "emailVerification": {
       "required": "Yêu Cầu Xác Minh Email",

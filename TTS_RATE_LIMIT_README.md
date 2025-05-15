@@ -4,7 +4,7 @@ This document explains how to set up and use the global rate limiting and queue 
 
 ## Overview
 
-The system implements a global rate limit for text-to-speech operations, allowing only a configurable number of operations per minute (default: 5). When the limit is reached, additional requests are placed in a queue and processed in order when capacity becomes available.
+The system implements a global rate limit for text-to-speech operations, allowing only a configurable number of operations per day (default set in environment variables). When the limit is reached, additional requests are placed in a queue and processed in order when capacity becomes available.
 
 ## Features
 
@@ -26,8 +26,11 @@ The system implements a global rate limit for text-to-speech operations, allowin
 Add the following to your `.env.local` file:
 
 ```
-# Rate limiting for free users (operations per minute)
-FREE_USER_TTS_LIMIT_PER_MINUTE=5
+# Rate limiting for free users (operations per day)
+# Set this to the desired daily limit for free users
+FREE_USER_TTS_LIMIT_PER_DAY=10
+# This is the public version accessible from the browser
+NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_DAY=10
 
 # Supabase configuration
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -106,11 +109,11 @@ npm run dev
 ```
 
 2. Navigate to the text-to-speech page
-3. Try submitting more than 5 requests in one minute to see the queue system in action
+3. Try submitting more requests than your configured daily limit to see the queue system in action
 
 ## How It Works
 
-1. **Rate Limiting**: The system tracks the number of TTS operations in each minute. If the global limit is exceeded, new requests are queued.
+1. **Rate Limiting**: The system tracks the number of TTS operations each day. If the global limit is exceeded, new requests are queued.
 
 2. **Queue System**: 
    - When a user submits a TTS request and the global limit is reached, their request is added to the queue
@@ -124,7 +127,8 @@ npm run dev
 
 ## Customization
 
-- To change the rate limit, update the `FREE_USER_TTS_LIMIT_PER_MINUTE` value in your `.env.local` file
+- To change the rate limit, update the `FREE_USER_TTS_LIMIT_PER_DAY` value in your `.env.local` file
+- For frontend display, also update the `NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_DAY` value
 - To modify the queue processing behavior, see `app/utils/rate-limiter.ts`
 - To customize the UI for queue status, see `app/components/text-to-speech-converter.tsx`
 

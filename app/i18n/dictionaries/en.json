@@ -144,7 +144,7 @@
     "inputPlaceholder": "Enter your text here (up to {charLimit} characters)",
     "voiceLabel": "Select a voice",
     "instructions": "Instructions: Enter your text in the box above, select a voice from the dropdown menu, then click 'Generate Speech'. Once generated, you can listen to the audio and download it as an MP3 file.",
-    "rateLimitNotice": "Note: Free users are limited to {limit} text-to-speech operations per minute globally.",
+    "rateLimitNotice": "Note: Free users are limited to {limit} text-to-speech operations per day globally.",
     "voices": {
       "alloy": "Alloy (Female, Casual)",
       "echo": "Echo (Male, Deep)",
@@ -167,7 +167,7 @@
       "failedGeneration": "Failed to generate speech. Please try again.",
       "emailNotVerified": "Please verify your email before using the text-to-speech feature",
       "loginRequired": "Please login before using the text-to-speech feature",
-      "rateLimitExceeded": "Rate limit exceeded. Please try again later."
+      "rateLimitExceeded": "Daily rate limit exceeded. Please try again tomorrow."
     },
     "emailVerification": {
       "required": "Email Verification Required",

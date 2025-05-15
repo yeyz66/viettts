@@ -305,11 +305,11 @@ export default function TextToSpeechConverter() {
               )}
 
               {/* Instructions */}
-              <div className="mt-6 bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                              <div className="mt-6 bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                 <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">Instructions</h3>
                 <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                   <p>{t('instructions')}</p>
-                  <p className="mt-2">{t.rich('rateLimitNotice', { limit: process.env.NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_MINUTE || '1' })}</p>
+                  <p className="mt-2">{t.rich('rateLimitNotice', { limit: process.env.NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_DAY || '10' })}</p>
                 </div>
               </div>
             </div>

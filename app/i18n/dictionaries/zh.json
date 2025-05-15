@@ -144,7 +144,7 @@
     "inputPlaceholder": "在此输入您的文本（最多{charLimit}个字符）",
     "voiceLabel": "选择声音",
     "instructions": "使用说明：在上方文本框中输入您的文字，从下拉菜单中选择声音，然后点击\"生成语音\"。生成后，您可以收听音频并将其下载为MP3文件。",
-    "rateLimitNotice": "注意：免费用户全局每分钟限制使用{limit}次文字转语音操作。",
+    "rateLimitNotice": "注意：免费用户全局每天限制使用{limit}次文字转语音操作。",
     "voices": {
       "alloy": "艾洛伊（女声，休闲）",
       "echo": "艾柯（男声，深沉）",
@@ -167,7 +167,7 @@
       "failedGeneration": "生成语音失败，请重试",
       "emailNotVerified": "请先验证您的邮箱后再使用文字转语音功能",
       "loginRequired": "请先登录后再使用文字转语音功能",
-      "rateLimitExceeded": "已达到使用频率限制，请稍后再试"
+      "rateLimitExceeded": "已达到每日使用次数限制，请明天再试"
     },
     "emailVerification": {
       "required": "需要验证邮箱",

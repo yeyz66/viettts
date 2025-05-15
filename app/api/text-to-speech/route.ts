@@ -131,7 +131,7 @@ export async function POST(request: NextRequest) {
     if (isLimitExceeded) {
       return NextResponse.json(
         { 
-          error: '已达到每分钟请求数限制，请稍后再试',
+          error: '已达到每天请求数限制，请明天再试',
           code: 'rate_limit_exceeded'
         },
         { status: 429 }

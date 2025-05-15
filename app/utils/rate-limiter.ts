@@ -11,13 +11,14 @@ const openai = new OpenAI({
 class TTSRateLimiter {
   private static instance: TTSRateLimiter;
   private freeUserLimit: number;
-  private windowMs: number = 60 * 1000; // 1 minute in milliseconds
+  private windowMs: number = 24 * 60 * 60 * 1000; // 1 day in milliseconds
   
   // Default TTS request processor implementation
   private _processRequestImpl: (payload: { text: string; voice: string }) => Promise<ArrayBuffer>;
 
   private constructor() {
-    this.freeUserLimit = Number(process.env.FREE_USER_TTS_LIMIT_PER_MINUTE) || 1;
+    // 从环境变量获取每日限制次数，如果未设置则默认使用10次作为兜底值
+    this.freeUserLimit = Number(process.env.NEXT_PUBLIC_FREE_USER_TTS_LIMIT_PER_DAY) || 10;
     
     // Set the default implementation for processing TTS requests
     this._processRequestImpl = async (payload: { text: string; voice: string }): Promise<ArrayBuffer> => {
@@ -58,15 +59,15 @@ class TTSRateLimiter {
     return TTSRateLimiter.instance;
   }
 
-  // Check if the user has exceeded rate limit for the current minute
+  // Check if the user has exceeded rate limit for the current day
   public async hasExceededRateLimit(): Promise<boolean> {
-    const currentMinuteKey = this.getCurrentMinuteKey();
+    const currentDayKey = this.getCurrentDayKey();
     
-    // Get the current usage count for this minute
+    // Get the current usage count for this day
     const { data, error } = await supabase
       .from('tts_usage_counts')
       .select('count')
-      .eq('minute_key', currentMinuteKey)
+      .eq('minute_key', currentDayKey)
       .single();
     
     if (error && error.code !== 'PGRST116') { // PGRST116 is "no rows found"
@@ -80,14 +81,14 @@ class TTSRateLimiter {
 
   // Record a TTS request for rate limiting purposes
   public async recordRequest(): Promise<void> {
-    const currentMinuteKey = this.getCurrentMinuteKey();
+    const currentDayKey = this.getCurrentDayKey();
     
-    // Upsert the usage count for the current minute
+    // Upsert the usage count for the current day
     const { error } = await supabase
       .from('tts_usage_counts')
       .upsert(
         { 
-          minute_key: currentMinuteKey, 
+          minute_key: currentDayKey, 
           count: 1,
           updated_at: new Date().toISOString()
         }, 
@@ -103,13 +104,14 @@ class TTSRateLimiter {
     }
     
     // If upsert succeeded, increment the count
-    await supabase.rpc('increment_tts_count', { key: currentMinuteKey });
+    await supabase.rpc('increment_tts_count', { key: currentDayKey });
   }
 
-  // Get the current minute key (used for rate limiting)
-  private getCurrentMinuteKey(): string {
+  // Get the current day key (used for rate limiting)
+  private getCurrentDayKey(): string {
     const now = new Date();
-    return `${now.getUTCFullYear()}-${now.getUTCMonth() + 1}-${now.getUTCDate()}-${now.getUTCHours()}-${now.getUTCMinutes()}`;
+    // 使用本地时间而不是UTC时间，确保按照自然天计算
+    return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
   }
 
   // Process a TTS request directly
