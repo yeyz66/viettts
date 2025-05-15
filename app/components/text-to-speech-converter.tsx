@@ -80,20 +80,11 @@ export default function TextToSpeechConverter() {
     }
 
     if (text.length > MAX_LENGTH) {
-      toast.error(t('errorMessages.tooLongText', { charLimit: MAX_LENGTH.toString() }));
+      toast.error(t('errorMessages.tooLongText', { charLimit: MAX_LENGTH }));
       return;
     }
 
-    // 检查用户是否已登录
-    if (!isAuthenticated) {
-      toast.error(t('errorMessages.loginRequired'));
-      
-      const loginPath = `${getCurrentLanguagePath()}/login`;
-      router.push(loginPath);
-      return;
-    }
-
-    // 检查用户是否已登录且邮箱已验证
+    // 如果用户已登录但邮箱未验证，阻止生成语音并提示验证
     if (isAuthenticated && !isEmailVerified) {
       setShowEmailVerificationAlert(true);
       toast.error(t('errorMessages.emailNotVerified'));
@@ -109,10 +100,15 @@ export default function TextToSpeechConverter() {
         setAudioUrl(null);
       }
 
+      // 获取当前用户信息
+      const user = useAuthStore.getState().user;
+      
       // Make API request to backend
       const response = await axios.post('/api/text-to-speech', {
         text,
         voice,
+        // 添加用户ID到请求体，以便后端能够识别用户
+        userId: user?.uid || null
       }, {
         responseType: 'arraybuffer',
       });
@@ -146,7 +142,7 @@ export default function TextToSpeechConverter() {
     } finally {
       setIsGenerating(false);
     }
-  }, [text, voice, audioUrl, t, MAX_LENGTH, isAuthenticated, isEmailVerified, router, getCurrentLanguagePath]);
+  }, [text, voice, audioUrl, t, MAX_LENGTH, isAuthenticated, isEmailVerified]);
 
   // Handle explicit generate button click
   const handleGenerateClick = useCallback(() => {

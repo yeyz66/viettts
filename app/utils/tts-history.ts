@@ -3,9 +3,10 @@ import { createClient } from '@supabase/supabase-js';
 // Initialize the Supabase client with admin key for server operations
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 // Create a Supabase client for admin operations
-const supabaseAdmin = createClient(supabaseUrl, supabaseAnonKey);
+const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey);
 
 // Create a utility function to record TTS usage
 export async function recordTTSUsage({ 
@@ -71,22 +72,5 @@ export async function recordTTSUsage({
   } catch (error) {
     console.error('Exception in recordTTSUsage:', error);
     return false;
-  }
-}
-
-// Get user ID from session if available
-export async function getUserIdFromRequest(): Promise<string | null> {
-  try {
-    // 创建一个简单的服务器端supabase客户端
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-    // 获取会话数据
-    const { data: { session } } = await supabase.auth.getSession();
-    
-    // 如果会话存在，返回用户ID
-    return session?.user?.id || null;
-  } catch (error) {
-    console.error('Error getting user ID from session:', error);
-    return null;
   }
 } 

@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import rateLimiter from '../../utils/rate-limiter';
-import { recordTTSUsage, getUserIdFromRequest } from '../../utils/tts-history';
+import { recordTTSUsage } from '../../utils/tts-history';
 import { createClient } from '@supabase/supabase-js';
 
 // 初始化Supabase客户端
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+
+// 创建 Supabase 客户端，首选使用服务角色密钥
+const supabase = createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey);
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -62,9 +66,6 @@ async function checkEmailVerified(userId: string | null): Promise<boolean> {
   }
 
   try {
-    // 创建Supabase客户端
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-    
     // 查询用户验证状态
     const { data, error } = await supabase
       .from('tts_users')
@@ -88,7 +89,7 @@ export async function POST(request: NextRequest) {
   try {
     // Parse request body
     const body = await request.json();
-    const { text, voice } = body;
+    const { text, voice, userId } = body;
 
     // Validate input
     if (!text || !voice) {
@@ -108,8 +109,8 @@ export async function POST(request: NextRequest) {
 
     const clientIP = getClientIP(request);
     
-    // Get user ID if they are logged in
-    const userId = await getUserIdFromRequest();
+    // 使用从请求体获取的用户ID
+    console.log('从前端收到用户ID:', userId);
     
     // 检查用户邮箱是否已验证
     const isEmailVerified = await checkEmailVerified(userId);
