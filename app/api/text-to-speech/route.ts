@@ -125,17 +125,6 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Record TTS usage without waiting for completion
-    recordTTSUsage({
-      text,
-      voice,
-      clientIP,
-      userId
-    }).catch(error => {
-      // Just log errors but don't fail the request
-      console.error('Failed to record TTS usage:', error);
-    });
-    
     // Check if global rate limit has been exceeded
     const isLimitExceeded = await rateLimiter.hasExceededRateLimit();
     
@@ -159,6 +148,16 @@ export async function POST(request: NextRequest) {
       try {
         // Enqueue the request and wait for it to be processed
         const buffer = await rateLimiter.enqueueRequest(clientIP, { text, voice });
+        
+        // 在成功处理队列请求后记录TTS使用情况
+        recordTTSUsage({
+          text,
+          voice,
+          clientIP,
+          userId
+        }).catch(error => {
+          console.error('Failed to record TTS usage after queue processing:', error);
+        });
         
         // When the queue processes this request, return the result
         return new NextResponse(buffer, {
@@ -185,6 +184,16 @@ export async function POST(request: NextRequest) {
       
       // Process TTS request directly
       const buffer = await processTTSRequest({ text, voice });
+      
+      // 在成功生成语音后记录TTS使用情况
+      recordTTSUsage({
+        text,
+        voice,
+        clientIP,
+        userId
+      }).catch(error => {
+        console.error('Failed to record TTS usage after direct processing:', error);
+      });
       
       // Return audio as binary data
       return new NextResponse(buffer, {
