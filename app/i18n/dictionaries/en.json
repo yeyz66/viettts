@@ -260,6 +260,32 @@
       "p1": "If you have any questions about these Terms, please contact us at support@viettts.com."
     }
   },
+  "regionSpecificTerms": {
+    "us": {
+      "title": "Additional Terms for Users in the United States",
+      "p1": "These additional terms apply only to users accessing our Services from the United States and are subject to U.S. federal and state laws.",
+      "p2": "Governing Law: These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions. Any dispute arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the courts located within California.",
+      "p3": "DMCA Compliance: We comply with the Digital Millennium Copyright Act. If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement, please contact our Copyright Agent at dmca@viettts.com with specific information as required by the DMCA.",
+      "p4": "State-Specific Rights: California residents have specific rights regarding personal information under the California Consumer Privacy Act (CCPA). New York residents may have additional consumer protection rights under New York State law.",
+      "p5": "Export Restrictions: You agree to comply with all applicable export and re-export control laws and regulations, including the Export Administration Regulations maintained by the U.S. Department of Commerce."
+    },
+    "china": {
+      "title": "中国用户附加条款",
+      "p1": "这些附加条款仅适用于从中国访问我们服务的用户，并受中国法律法规约束。",
+      "p2": "法律合规：您同意在使用我们的服务时遵守《中华人民共和国网络安全法》、《中华人民共和国数据安全法》和《中华人民共和国个人信息保护法》等适用的中国法律法规。",
+      "p3": "内容监管：根据中国法律要求，您不得发布、传输或存储任何违反中国法律法规的内容。我们可能根据监管要求对内容进行审核，并保留删除任何违反中国法律的内容的权利。",
+      "p4": "数据本地化：在适用法律要求的范围内，您的某些数据可能会存储在中国境内。我们可能在必要时与中国监管机构分享某些信息以遵守适用的法律法规。",
+      "p5": "争议解决：与这些条款相关的任何争议应根据中国法律解决，并提交至北京仲裁委员会进行仲裁。仲裁裁决是终局的，对双方均有约束力。"
+    },
+    "vietnam": {
+      "title": "Điều khoản bổ sung cho người dùng tại Việt Nam",
+      "p1": "Các điều khoản bổ sung này chỉ áp dụng cho người dùng truy cập Dịch vụ của chúng tôi từ Việt Nam và tuân theo luật pháp và quy định của Việt Nam.",
+      "p2": "Tuân thủ pháp luật: Bạn đồng ý tuân thủ Luật An toàn thông tin mạng, Luật Bảo vệ dữ liệu cá nhân, và các luật hiện hành khác của Việt Nam khi sử dụng Dịch vụ của chúng tôi.",
+      "p3": "Quản lý nội dung: Theo yêu cầu của pháp luật Việt Nam, bạn không được đăng tải, truyền phát hoặc lưu trữ bất kỳ nội dung nào vi phạm luật pháp Việt Nam. Chúng tôi có thể xem xét nội dung theo yêu cầu của cơ quan quản lý và bảo lưu quyền xóa bất kỳ nội dung nào vi phạm luật pháp Việt Nam.",
+      "p4": "Bảo vệ dữ liệu: Chúng tôi sẽ áp dụng các biện pháp bảo vệ phù hợp để đảm bảo an toàn cho thông tin cá nhân của bạn theo luật pháp Việt Nam. Trong trường hợp có vi phạm dữ liệu, chúng tôi sẽ thông báo cho bạn và cơ quan có thẩm quyền theo quy định của pháp luật Việt Nam.",
+      "p5": "Giải quyết tranh chấp: Bất kỳ tranh chấp nào liên quan đến các Điều khoản này sẽ được giải quyết theo luật pháp Việt Nam và sẽ được đưa ra Trung tâm Trọng tài Quốc tế Việt Nam (VIAC) để giải quyết bằng trọng tài. Phán quyết trọng tài sẽ là cuối cùng và ràng buộc các bên."
+    }
+  },
   "privacyPolicy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last Updated: July 1, 2024",

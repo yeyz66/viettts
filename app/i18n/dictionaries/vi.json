@@ -257,7 +257,33 @@
     },
     "contact": {
       "title": "Liên hệ với chúng tôi",
-      "p1": "Nếu bạn có bất kỳ câu hỏi nào về các Điều khoản này, vui lòng liên hệ với chúng tôi tại support@voicegenius.com."
+      "p1": "Nếu bạn có bất kỳ câu hỏi nào về các Điều khoản này, vui lòng liên hệ với chúng tôi tại support@viettts.com."
+    }
+  },
+  "regionSpecificTerms": {
+    "us": {
+      "title": "Điều khoản bổ sung cho người dùng tại Hoa Kỳ",
+      "p1": "Các điều khoản bổ sung này chỉ áp dụng cho người dùng truy cập Dịch vụ của chúng tôi từ Hoa Kỳ và tuân theo luật liên bang và tiểu bang của Hoa Kỳ.",
+      "p2": "Luật điều chỉnh: Các Điều khoản này sẽ được điều chỉnh và giải thích theo luật của Tiểu bang California, không xem xét đến các quy định xung đột pháp luật. Bất kỳ tranh chấp nào phát sinh từ hoặc liên quan đến các Điều khoản này sẽ thuộc thẩm quyền riêng biệt của các tòa án đặt tại California.",
+      "p3": "Tuân thủ DMCA: Chúng tôi tuân thủ Đạo luật Bản quyền Thiên niên kỷ Kỹ thuật số. Nếu bạn tin rằng tác phẩm có bản quyền của mình đã bị sao chép theo cách cấu thành vi phạm bản quyền, vui lòng liên hệ với Đại diện Bản quyền của chúng tôi tại dmca@viettts.com với thông tin cụ thể theo yêu cầu của DMCA.",
+      "p4": "Quyền đặc thù của tiểu bang: Cư dân California có các quyền cụ thể liên quan đến thông tin cá nhân theo Đạo luật Bảo vệ Quyền riêng tư Người tiêu dùng California (CCPA). Cư dân New York có thể có thêm quyền bảo vệ người tiêu dùng theo luật tiểu bang New York.",
+      "p5": "Hạn chế xuất khẩu: Bạn đồng ý tuân thủ tất cả các luật và quy định kiểm soát xuất khẩu và tái xuất khẩu hiện hành, bao gồm Quy định Quản lý Xuất khẩu do Bộ Thương mại Hoa Kỳ duy trì."
+    },
+    "china": {
+      "title": "Điều khoản bổ sung cho người dùng tại Trung Quốc",
+      "p1": "Các điều khoản bổ sung này chỉ áp dụng cho người dùng truy cập Dịch vụ của chúng tôi từ Trung Quốc và tuân theo luật pháp và quy định của Trung Quốc.",
+      "p2": "Tuân thủ pháp luật: Bạn đồng ý tuân thủ Luật An ninh mạng của Cộng hòa Nhân dân Trung Hoa, Luật An ninh dữ liệu của Cộng hòa Nhân dân Trung Hoa, Luật Bảo vệ thông tin cá nhân của Cộng hòa Nhân dân Trung Hoa và các luật và quy định khác của Trung Quốc khi sử dụng Dịch vụ của chúng tôi.",
+      "p3": "Quản lý nội dung: Theo yêu cầu của luật pháp Trung Quốc, bạn không được đăng tải, truyền phát hoặc lưu trữ bất kỳ nội dung nào vi phạm luật pháp và quy định của Trung Quốc. Chúng tôi có thể xem xét nội dung theo yêu cầu của cơ quan quản lý và bảo lưu quyền xóa bất kỳ nội dung nào vi phạm luật pháp Trung Quốc.",
+      "p4": "Nội địa hóa dữ liệu: Trong phạm vi yêu cầu của luật hiện hành, một số dữ liệu của bạn có thể được lưu trữ trong lãnh thổ Trung Quốc. Chúng tôi có thể chia sẻ thông tin nhất định với cơ quan quản lý Trung Quốc khi cần thiết để tuân thủ luật pháp và quy định hiện hành.",
+      "p5": "Giải quyết tranh chấp: Bất kỳ tranh chấp nào liên quan đến các Điều khoản này sẽ được giải quyết theo luật pháp Trung Quốc và sẽ được đưa ra Ủy ban Trọng tài Bắc Kinh để giải quyết bằng trọng tài. Phán quyết trọng tài sẽ là cuối cùng và ràng buộc các bên."
+    },
+    "vietnam": {
+      "title": "Điều khoản bổ sung cho người dùng tại Việt Nam",
+      "p1": "Các điều khoản bổ sung này chỉ áp dụng cho người dùng truy cập Dịch vụ của chúng tôi từ Việt Nam và tuân theo luật pháp và quy định của Việt Nam.",
+      "p2": "Tuân thủ pháp luật: Bạn đồng ý tuân thủ Luật An toàn thông tin mạng, Luật Bảo vệ dữ liệu cá nhân, và các luật hiện hành khác của Việt Nam khi sử dụng Dịch vụ của chúng tôi.",
+      "p3": "Quản lý nội dung: Theo yêu cầu của pháp luật Việt Nam, bạn không được đăng tải, truyền phát hoặc lưu trữ bất kỳ nội dung nào vi phạm luật pháp Việt Nam. Chúng tôi có thể xem xét nội dung theo yêu cầu của cơ quan quản lý và bảo lưu quyền xóa bất kỳ nội dung nào vi phạm luật pháp Việt Nam.",
+      "p4": "Bảo vệ dữ liệu: Chúng tôi sẽ áp dụng các biện pháp bảo vệ phù hợp để đảm bảo an toàn cho thông tin cá nhân của bạn theo luật pháp Việt Nam. Trong trường hợp có vi phạm dữ liệu, chúng tôi sẽ thông báo cho bạn và cơ quan có thẩm quyền theo quy định của pháp luật Việt Nam.",
+      "p5": "Giải quyết tranh chấp: Bất kỳ tranh chấp nào liên quan đến các Điều khoản này sẽ được giải quyết theo luật pháp Việt Nam và sẽ được đưa ra Trung tâm Trọng tài Quốc tế Việt Nam (VIAC) để giải quyết bằng trọng tài. Phán quyết trọng tài sẽ là cuối cùng và ràng buộc các bên."
     }
   },
   "privacyPolicy": {
@@ -349,7 +375,7 @@
     },
     "contact": {
       "title": "Liên Hệ Với Chúng Tôi",
-      "p1": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, vui lòng liên hệ với chúng tôi tại privacy@voicegenius.com.",
+      "p1": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, vui lòng liên hệ với chúng tôi tại privacy@viettts.com.",
       "p2": "VietTts, 123 AI Avenue, San Francisco, CA 94105, Hoa Kỳ"
     }
   },

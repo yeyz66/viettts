@@ -1,9 +1,27 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import RegionSpecificTerms from './region-specific-terms';
 
 export default function TermsOfService() {
   const t = useTranslations('termsOfService');
+  const params = useParams();
+  const locale = params.locale as string || 'en';
+
+  // 根据不同的语言展示相应的地区特定条款
+  const getRegionByLocale = (locale: string): 'us' | 'china' | 'vietnam' => {
+    switch (locale) {
+      case 'zh':
+        return 'china';
+      case 'vi':
+        return 'vietnam';
+      default:
+        return 'us';
+    }
+  };
+
+  const region = getRegionByLocale(locale);
 
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -35,6 +53,9 @@ export default function TermsOfService() {
                 <p>{t('serviceDescription.p2')}</p>
               </div>
             </section>
+
+            {/* 显示特定地区的条款 */}
+            <RegionSpecificTerms region={region} />
 
             <section>
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">{t('userAccounts.title')}</h2>

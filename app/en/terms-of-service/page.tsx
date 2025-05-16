@@ -1,6 +1,6 @@
-import NavBar from '../components/navbar';
-import Footer from '../components/footer';
-import TermsOfService from '../components/terms-of-service';
+import NavBar from '../../components/navbar';
+import Footer from '../../components/footer';
+import TermsOfService from '../../components/terms-of-service';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
