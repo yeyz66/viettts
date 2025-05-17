@@ -1,5 +1,5 @@
-import NavBar from '../components/navbar';
-import Footer from '../components/footer';
+import NavBar from '../../components/navbar';
+import Footer from '../../components/footer';
 import { Metadata } from 'next';
 import React from 'react';
 
@@ -8,17 +8,17 @@ export const metadata: Metadata = {
   description: '了解我们如何收集、使用、存储和保护您的个人信息。我们致力于保护您的隐私和数据安全。',
   keywords: '隐私政策, 数据保护, 个人信息, 文字转语音',
   alternates: {
-    canonical: '/privacy-policy',
+    canonical: '/zh/privacy-policy',
   },
   openGraph: {
     title: '隐私政策 | TTL文字转语音平台',
     description: '了解我们如何收集、使用、存储和保护您的个人信息。我们致力于保护您的隐私和数据安全。',
-    url: '/privacy-policy',
+    url: '/zh/privacy-policy',
     type: 'website',
   }
 };
 
-export default function PrivacyPolicyPage() {
+export default function ZhPrivacyPolicyPage() {
   return (
     <>
       <NavBar />

@@ -5,6 +5,7 @@ import { Dialog, Popover } from '@headlessui/react';
 import {
   Bars3Icon,
   XMarkIcon,
+  ChevronDownIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import LanguageSwitcher from './language-switcher';
@@ -108,14 +109,27 @@ export default function NavBar() {
           <div className="mr-6">
             <LanguageSwitcher />
           </div>
-          <div className="h-6 flex items-center">
-            {isLoading ? (
-              renderSpinner()
-            ) : isAuthenticated ? (
-              <>
-                <span className="text-sm font-semibold leading-6 text-gray-700 dark:text-gray-300 mr-4">
-                  {user?.displayName || user?.email || '用户'}
-                </span>
+          {isLoading ? (
+            renderSpinner()
+          ) : isAuthenticated ? (
+            <div className="relative group">
+              <button className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 flex items-center">
+                <span className="mr-2">{user?.displayName || user?.email || t('login')}</span>
+                <ChevronDownIcon className="h-4 w-4 text-gray-500" />
+              </button>
+              <div className="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg hidden group-hover:block z-10">
+                <Link
+                  href={`/${locale === 'en' ? 'en' : locale}/dashboard`}
+                  className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href={`/${locale === 'en' ? 'en' : locale}/profile`}
+                  className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  Profile
+                </Link>
                 <ConfirmPopover
                   onConfirm={handleLogout}
                   title={logoutT('title')}
@@ -123,24 +137,23 @@ export default function NavBar() {
                   confirmText={logoutT('confirm')}
                   cancelText={logoutT('cancel')}
                   confirmColor="red"
-                  placement="bottom"
                 >
                   <button
-                    className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 whitespace-nowrap min-w-[60px] cursor-pointer"
+                    className="block w-full text-left px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     {t('logout')}
                   </button>
                 </ConfirmPopover>
-              </>
-            ) : (
-              <Link
-                href={`/${locale === 'en' ? '' : locale}/login`}
-                className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 whitespace-nowrap"
-              >
-                {t('login')}
-              </Link>
-            )}
-          </div>
+              </div>
+            </div>
+          ) : (
+            <Link
+              href={`/${locale === 'en' ? 'en' : locale}/login`}
+              className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400"
+            >
+              {t('login')} <span aria-hidden="true">&rarr;</span>
+            </Link>
+          )}
         </div>
       </nav>
 
@@ -210,7 +223,7 @@ export default function NavBar() {
                     </div>
                   ) : (
                     <Link
-                      href={`/${locale === 'en' ? '' : locale}/login`}
+                      href={`/${locale === 'en' ? 'en' : locale}/login`}
                       className="block rounded-lg py-2.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 whitespace-nowrap"
                       onClick={() => setMobileMenuOpen(false)}
                     >

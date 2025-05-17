@@ -2,9 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useLocale } from '../i18n/intl-provider';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const { locale } = useLocale();
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -46,12 +48,12 @@ export default function Footer() {
               <h3 className="text-sm font-semibold leading-6 text-white">{t('legal')}</h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li>
-                  <Link href="/terms-of-service" className="text-sm leading-6 text-gray-300 hover:text-white">
+                  <Link href={`/${locale === 'en' ? 'en' : locale}/terms-of-service`} className="text-sm leading-6 text-gray-300 hover:text-white">
                     {t('terms')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy" className="text-sm leading-6 text-gray-300 hover:text-white">
+                  <Link href={`/${locale === 'en' ? 'en' : locale}/privacy-policy`} className="text-sm leading-6 text-gray-300 hover:text-white">
                     {t('privacy')}
                   </Link>
                 </li>
